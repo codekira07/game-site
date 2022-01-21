@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0px;
+			padding: none;
+			overflow: hidden;
+		}
+
+		body {
+			height: 100vh;
+			width: 100vw;
+			background: url("bg.png");
+			background-size: 100vw 100vh;
+			position: relative;
+		}
+
+		p {
+			margin: 0;
+			font-size: 2rem;
+			font-weight: bold;
+			color: white;
+			position: absolute;
+			top: 40vh;
+			left: 32vw;
+		}
+
+		@keyframes p1 {
+			100% {
+				top: 0vh;
+				left: 95vw;
+			}
+		}
+
+		@keyframes p2 {
+			100% {
+				top: 30vh;
+				left: 95vw;
+			}
+		}
+
+		@keyframes p3 {
+			100% {
+				top: 50vh;
+				left: 95vw;
+			}
+		}
+
+		@keyframes p4 {
+			100% {
+				top: 80vh;
+				left: 95vw;
+			}
+		}
+
+		@keyframes p5 {
+			100% {
+				top: 0vh;
+				left: 0vw;
+			}
+		}
+
+		@keyframes p6 {
+			100% {
+				top: 30vh;
+				left: 0vw;
+			}
+		}
+
+		@keyframes p7 {
+			100% {
+				top: 50vh;
+				left: 0vw;
+			}
+		}
+
+		@keyframes p8 {
+			100% {
+				top: 80vh;
+				left: 0vw;
+			}
+		}
+
+		@keyframes dead {
+			100% {
+				top: 100vh
+			}
+		}
+
+		.p1 {
+			height: 10vh;
+			width: 5vw;
+			background: url("bird.gif");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 0;
+			left: 0;
+			animation: p1;
+			animation-duration: 1s;
+			animation-fill-mode: forwards;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+		}
+
+		.p2 {
+			height: 10vh;
+			width: 5vw;
+			background: url("bird.gif");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 30vh;
+			left: 0vw;
+			animation: p2;
+			animation-duration: 1s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+		}
+
+		.p3 {
+			height: 10vh;
+			width: 5vw;
+			background: url("bird.gif");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 50vh;
+			left: 0vw;
+			animation: p3;
+			animation-duration: 1s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+		}
+
+		.p4 {
+			height: 10vh;
+			width: 5vw;
+			background: url("bird.gif");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 80vh;
+			left: 0vw;
+			animation: p4;
+			animation-duration: 1s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+		}
+
+		.p5 {
+			height: 10vh;
+			width: 5vw;
+			background: url("birdr.gif");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 0;
+			left: 95vw;
+			animation: p5;
+			animation-duration: 1s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+		}
+
+		.p6 {
+			height: 10vh;
+			width: 5vw;
+			background: url("birdr.gif");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 30vh;
+			left: 95vw;
+			animation: p6;
+			animation-duration: 1s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+		}
+
+		.p7 {
+			height: 10vh;
+			width: 5vw;
+			background: url("birdr.gif");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 50vh;
+			left: 95vw;
+			animation: p7;
+			animation-duration: 1s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+		}
+
+		.p8 {
+			height: 10vh;
+			width: 5vw;
+			background: url("birdr.gif");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 80vh;
+			left: 95vw;
+			animation: p8;
+			animation-duration: 1s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+		}
+
+		@media (max-width:600px) {
+			p {
+				font-size: 1.5rem;
+				position: absolute;
+				top: 40vh;
+				left: 18vw;
+			}
+
+			.p1 {
+				height: 5vh;
+				width: 10vw;
+				background: url("bird.gif");
+				background-size: 10vw 5vh;
+				position: absolute;
+				top: 0;
+				left: 0;
+				animation: p1;
+				animation-duration: 1s;
+				animation-fill-mode: forwards;
+				animation-iteration-count: infinite;
+				animation-timing-function: linear;
+			}
+
+			.p2 {
+				height: 5vh;
+				width: 10vw;
+				background: url("bird.gif");
+				background-size: 10vw 5vh;
+				position: absolute;
+				top: 30vh;
+				left: 0vw;
+				animation: p2;
+				animation-duration: 1s;
+				animation-iteration-count: infinite;
+				animation-timing-function: linear;
+			}
+
+			.p3 {
+				height: 5vh;
+				width: 10vw;
+				background: url("bird.gif");
+				background-size: 10vw 5vh;
+				position: absolute;
+				top: 50vh;
+				left: 0vw;
+				animation: p3;
+				animation-duration: 1s;
+				animation-iteration-count: infinite;
+				animation-timing-function: linear;
+			}
+
+			.p4 {
+				height: 5vh;
+				width: 10vw;
+				background: url("bird.gif");
+				background-size: 10vw 5vh;
+				position: absolute;
+				top: 80vh;
+				left: 0vw;
+				animation: p4;
+				animation-duration: 1s;
+				animation-iteration-count: infinite;
+				animation-timing-function: linear;
+			}
+
+			.p5 {
+				height: 5vh;
+				width: 10vw;
+				background: url("birdr.gif");
+				background-size: 10vw 5vh;
+				position: absolute;
+				top: 0;
+				left: 95vw;
+				animation: p5;
+				animation-duration: 1s;
+				animation-iteration-count: infinite;
+				animation-timing-function: linear;
+			}
+
+			.p6 {
+				height: 5vh;
+				width: 10vw;
+				background: url("birdr.gif");
+				background-size: 10vw 5vh;
+				position: absolute;
+				top: 30vh;
+				left: 95vw;
+				animation: p6;
+				animation-duration: 1s;
+				animation-iteration-count: infinite;
+				animation-timing-function: linear;
+			}
+
+			.p7 {
+				height: 5vh;
+				width: 10vw;
+				background: url("birdr.gif");
+				background-size: 10vw 5vh;
+				position: absolute;
+				top: 50vh;
+				left: 95vw;
+				animation: p7;
+				animation-duration: 1s;
+				animation-iteration-count: infinite;
+				animation-timing-function: linear;
+			}
+
+			.p8 {
+				height: 5vh;
+				width: 10vw;
+				background: url("birdr.gif");
+				background-size: 10vw 5vh;
+				position: absolute;
+				top: 80vh;
+				left: 95vw;
+				animation: p8;
+				animation-duration: 1s;
+				animation-iteration-count: infinite;
+				animation-timing-function: linear;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<p>Click any where on screen to start</p>
+	<div class="p1"></div>
+	<div class="p2"></div>
+	<div class="p3"></div>
+	<div class="p4"></div>
+	<div class="p5"></div>
+	<div class="p6"></div>
+	<div class="p7"></div>
+	<div class="p8"></div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script type="text/javascript">
+
+		var query = matchMedia("(max-width:600px)");
+		if (query.matches) {
+			
+			$("p").text("Tap on screen to start");
+			
+			for (var i = 1; i < 9; i++) {
+				$(".p" + i).hide();
+			}
+
+			var once = 0;
+			
+			$(document).on("touchstart", function () {
+				if (once == 0) {
+					$("p").text("Score: 0");
+					$("p").css("top","0vh");
+					$("p").css("left", "0vw");
+					var score = 0;
+					setInterval(function () {
+						var r;
+						var a, b;
+
+						r = Math.floor(Math.random() * 8) + 1;
+						a = r;
+						$(".p" + r).show();
+
+						r = Math.floor(Math.random() * 8) + 1;
+						b = r;
+						$(".p" + r).show();
+
+						setTimeout(function () {
+							$(".p" + a).hide();
+							$(".p" + b).hide();
+						}, 900);
+
+					}, 1000);
+
+
+					// audio wasn't working unless i clicked on screen so i  made a situation to cover this mess       
+					$(".p1").on("touchstart", function () {
+						var s = new Audio("shot.mp3");
+						s.play();
+
+						$(".p1").css("background", 'url("dead.png")');
+						$(".p1").css("background-size", "10vw 5vh");
+						$(".p1").css("animation-play-state", "paused");
+						score++;
+						$("p").text("Score: " + score);
+						setTimeout(function () {
+							$(".p1").hide();
+							$(".p1").css("background", "");
+							$(".p1").css("animation-play-state", "running");
+						}, 100);
+
+					});
+
+					$(".p2").on("touchstart", function () {
+						var s = new Audio("shot.mp3");
+						s.play();
+						$(".p2").css("background", 'url("dead.png")');
+						$(".p2").css("background-size", "10vw 5vh");
+						$(".p2").css("animation-play-state", "paused");
+						score++;
+						$("p").text("Score: " + score);
+						setTimeout(function () {
+							$(".p2").hide();
+							$(".p2").css("background", "");
+							$(".p2").css("animation-play-state", "running");
+						}, 100);
+
+					});
+
+					$(".p3").on("touchstart", function () {
+						var s = new Audio("shot.mp3");
+						s.play();
+						$(".p3").css("background", 'url("dead.png")');
+						$(".p3").css("background-size", "10vw 5vh");
+						$(".p3").css("animation-play-state", "paused");
+						score++;
+						$("p").text("Score: " + score);
+						setTimeout(function () {
+							$(".p3").hide();
+							$(".p3").css("background", "");
+							$(".p3").css("animation-play-state", "running");
+						}, 100);
+
+					});
+
+					$(".p4").on("touchstart", function () {
+						var s = new Audio("shot.mp3");
+						s.play();
+						$(".p4").css("background", 'url("dead.png")');
+						$(".p4").css("background-size", "10vw 5vh");
+						$(".p4").css("animation-play-state", "paused");
+						score++;
+						$("p").text("Score: " + score);
+						setTimeout(function () {
+							$(".p4").hide();
+							$(".p4").css("background", "");
+							$(".p4").css("animation-play-state", "running");
+						}, 100);
+
+					});
+					$(".p5").on("touchstart", function () {
+						var s = new Audio("shot.mp3");
+						s.play();
+						$(".p5").css("background", 'url("dead.png")');
+						$(".p5").css("background-size", "10vw 5vh");
+						$(".p5").css("animation-play-state", "paused");
+						score++;
+						$("p").text("Score: " + score);
+						setTimeout(function () {
+							$(".p5").hide();
+							$(".p5").css("background", "");
+							$(".p5").css("animation-play-state", "running");
+						}, 100);
+
+					});
+
+					$(".p6").on("touchstart", function () {
+						var s = new Audio("shot.mp3");
+						s.play();
+						$(".p6").css("background", 'url("dead.png")');
+						$(".p6").css("background-size", "10vw 5vh");
+						$(".p6").css("animation-play-state", "paused");
+						score++;
+						$("p").text("Score: " + score);
+						setTimeout(function () {
+							$(".p6").hide();
+							$(".p6").css("background", "");
+							$(".p6").css("animation-play-state", "running");
+						}, 100);
+
+					});
+
+					$(".p7").on("touchstart", function () {
+						var s = new Audio("shot.mp3");
+						s.play();
+						$(".p7").css("background", 'url("dead.png")');
+						$(".p7").css("background-size", "10vw 5vh");
+						$(".p7").css("animation-play-state", "paused");
+						score++;
+						$("p").text("Score: " + score);
+						setTimeout(function () {
+							$(".p7").hide();
+							$(".p7").css("background", "");
+							$(".p7").css("animation-play-state", "running");
+						}, 100);
+
+					});
+
+					$(".p8").on("touchstart", function () {
+						var s = new Audio("shot.mp3");
+						s.play();
+						$(".p8").css("background", 'url("dead.png")');
+						$(".p8").css("background-size", "10vw 5vh");
+						$(".p8").css("animation-play-state", "paused");
+						score++;
+						$("p").text("Score: " + score);
+						setTimeout(function () {
+							$(".p8").hide();
+							$(".p8").css("background", "");
+							$(".p8").css("animation-play-state", "running");
+						}, 100);
+
+					});
+					once = 1;
+				}
+			});
+		}
+		else {
+			for (var i = 1; i < 9; i++) {
+				$(".p" + i).hide();
+			}
+			var once = 0;
+			$(document).on("click", function () {
+				if (once == 0) {
+					$("p").text("Score: 0");
+					$("p").css("top","0vh");
+					$("p").css("left", "0vw")
+					var score = 0;
+					setInterval(function () {
+						var r;
+						var a, b, c, d;
+
+						r = Math.floor(Math.random() * 8) + 1;
+						a = r;
+						$(".p" + r).show();
+
+						r = Math.floor(Math.random() * 8) + 1;
+						b = r;
+						$(".p" + r).show();
+
+						r = Math.floor(Math.random() * 8) + 1;
+						c = r;
+						$(".p" + r).show();
+
+						r = Math.floor(Math.random() * 8) + 1;
+						d = r;
+						$(".p" + r).show();
+
+						setTimeout(function () {
+							$(".p" + a).hide();
+							$(".p" + b).hide();
+							$(".p" + c).hide();
+							$(".p" + d).hide();
+						}, 1900);
+
+					}, 2000);
+
+
+					// audio wasn't working unless i clicked on screen so i  made a situation to cover this mess       
+					$(".p1").on("mouseenter", function () {
+						var s = new Audio("shot.mp3");
+						s.play();
+
+						$(".p1").css("background", 'url("dead.png")');
+						$(".p1").css("background-size", "5vw 10vh");
+						$(".p1").css("animation-play-state", "paused");
+						score++;
+						$("p").text("Score: " + score);
+						setTimeout(function () {
+							$(".p1").hide();
+							$(".p1").css("background", "");
+							$(".p1").css("animation-play-state", "running");
+						}, 100);
+
+					});
+
+					$(".p2").on("mouseenter", function () {
+						var s = new Audio("shot.mp3");
+						s.play();
+						$(".p2").css("background", 'url("dead.png")');
+						$(".p2").css("background-size", "5vw 10vh");
+						$(".p2").css("animation-play-state", "paused");
+						score++;
+						$("p").text("Score: " + score);
+						setTimeout(function () {
+							$(".p2").hide();
+							$(".p2").css("background", "");
+							$(".p2").css("animation-play-state", "running");
+						}, 100);
+
+					});
+
+					$(".p3").on("mouseenter", function () {
+						var s = new Audio("shot.mp3");
+						s.play();
+						$(".p3").css("background", 'url("dead.png")');
+						$(".p3").css("background-size", "5vw 10vh");
+						$(".p3").css("animation-play-state", "paused");
+						score++;
+						$("p").text("Score: " + score);
+						setTimeout(function () {
+							$(".p3").hide();
+							$(".p3").css("background", "");
+							$(".p3").css("animation-play-state", "running");
+						}, 100);
+
+					});
+
+					$(".p4").on("mouseenter", function () {
+						var s = new Audio("shot.mp3");
+						s.play();
+						$(".p4").css("background", 'url("dead.png")');
+						$(".p4").css("background-size", "5vw 10vh");
+						$(".p4").css("animation-play-state", "paused");
+						score++;
+						$("p").text("Score: " + score);
+						setTimeout(function () {
+							$(".p4").hide();
+							$(".p4").css("background", "");
+							$(".p4").css("animation-play-state", "running");
+						}, 100);
+
+					});
+					$(".p5").on("mouseenter", function () {
+						var s = new Audio("shot.mp3");
+						s.play();
+						$(".p5").css("background", 'url("dead.png")');
+						$(".p5").css("background-size", "5vw 10vh");
+						$(".p5").css("animation-play-state", "paused");
+						score++;
+						$("p").text("Score: " + score);
+						setTimeout(function () {
+							$(".p5").hide();
+							$(".p5").css("background", "");
+							$(".p5").css("animation-play-state", "running");
+						}, 100);
+
+					});
+
+					$(".p6").on("mouseenter", function () {
+						var s = new Audio("shot.mp3");
+						s.play();
+						$(".p6").css("background", 'url("dead.png")');
+						$(".p6").css("background-size", "5vw 10vh");
+						$(".p6").css("animation-play-state", "paused");
+						score++;
+						$("p").text("Score: " + score);
+						setTimeout(function () {
+							$(".p6").hide();
+							$(".p6").css("background", "");
+							$(".p6").css("animation-play-state", "running");
+						}, 100);
+
+					});
+
+					$(".p7").on("mouseenter", function () {
+						var s = new Audio("shot.mp3");
+						s.play();
+						$(".p7").css("background", 'url("dead.png")');
+						$(".p7").css("background-size", "5vw 10vh");
+						$(".p7").css("animation-play-state", "paused");
+						score++;
+						$("p").text("Score: " + score);
+						setTimeout(function () {
+							$(".p7").hide();
+							$(".p7").css("background", "");
+							$(".p7").css("animation-play-state", "running");
+						}, 100);
+
+					});
+
+					$(".p8").on("mouseenter", function () {
+						var s = new Audio("shot.mp3");
+						s.play();
+						$(".p8").css("background", 'url("dead.png")');
+						$(".p8").css("background-size", "5vw 10vh");
+						$(".p8").css("animation-play-state", "paused");
+						score++;
+						$("p").text("Score: " + score);
+						setTimeout(function () {
+							$(".p8").hide();
+							$(".p8").css("background", "");
+							$(".p8").css("animation-play-state", "running");
+						}, 100);
+
+					});
+					once = 1;
+				}
+			});
+		}
+	</script>
+</body>
+
+</html>

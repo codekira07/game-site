@@ -1,0 +1,3148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            color: transparent;
+            font-size: 1px;
+            background: black;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .title {
+            font-size: 2rem;
+            color: white;
+            position: absolute;
+            top: 0;
+            left: 40vw;
+        }
+
+        .d1 {
+            margin: 0;
+            height: 20vh;
+            width: 10vw;
+            text-align: center;
+            border-right: 1px solid white;
+            border-bottom: 1px solid white;
+            position: absolute;
+            top: 20vh;
+            left: 35vw;
+        }
+
+        .d2 {
+            margin: 0;
+            height: 20vh;
+            width: 10vw;
+            text-align: center;
+            border-right: 1px solid white;
+            border-bottom: 1px solid white;
+            position: absolute;
+            top: 20vh;
+            left: 45vw;
+        }
+
+        .d3 {
+            margin: 0;
+            height: 20vh;
+            width: 10vw;
+            text-align: center;
+            border-bottom: 1px solid white;
+            position: absolute;
+            top: 20vh;
+            left: 55vw;
+        }
+
+        .d4 {
+            margin: 0;
+            height: 20vh;
+            width: 10vw;
+            text-align: center;
+            border-right: 1px solid white;
+            border-bottom: 1px solid white;
+            position: absolute;
+            top: 40vh;
+            left: 35vw;
+        }
+
+        .d5 {
+            margin: 0;
+            height: 20vh;
+            width: 10vw;
+            text-align: center;
+            border-right: 1px solid white;
+            border-bottom: 1px solid white;
+            position: absolute;
+            top: 40vh;
+            left: 45vw;
+        }
+
+        .d6 {
+            margin: 0;
+            height: 20vh;
+            width: 10vw;
+            text-align: center;
+            border-bottom: 1px solid white;
+            position: absolute;
+            top: 40vh;
+            left: 55vw;
+        }
+
+        .d7 {
+            margin: 0;
+            height: 20vh;
+            width: 10vw;
+            text-align: center;
+            border-right: 1px solid white;
+            position: absolute;
+            top: 60vh;
+            left: 35vw;
+        }
+
+        .d8 {
+            margin: 0;
+            height: 20vh;
+            width: 10vw;
+            text-align: center;
+            border-right: 1px solid white;
+            position: absolute;
+            top: 60vh;
+            left: 45vw;
+        }
+
+        .d9 {
+            margin: 0;
+            height: 20vh;
+            width: 10vw;
+            text-align: center;
+            position: absolute;
+            top: 60vh;
+            left: 55vw;
+        }
+
+        @media (orientation:portrait) {
+            .title {
+                font-size: 2rem;
+                color: white;
+                position: absolute;
+                top: 0;
+                left: 20vw;
+            }
+
+            .d1 {
+                margin: 0;
+                height: 15vh;
+                width: 20vw;
+                text-align: center;
+                border-right: 1px solid white;
+                border-bottom: 1px solid white;
+                position: absolute;
+                top: 20vh;
+                left: 17.5vw;
+            }
+
+            .d2 {
+                margin: 0;
+                height: 15vh;
+                width: 20vw;
+                text-align: center;
+                border-right: 1px solid white;
+                border-bottom: 1px solid white;
+                position: absolute;
+                top: 20vh;
+                left: 37.5vw;
+            }
+
+            .d3 {
+                margin: 0;
+                height: 15vh;
+                width: 20vw;
+                text-align: center;
+                border-bottom: 1px solid white;
+                position: absolute;
+                top: 20vh;
+                left: 57.5vw;
+            }
+
+            .d4 {
+                margin: 0;
+                height: 15vh;
+                width: 20vw;
+                text-align: center;
+                border-right: 1px solid white;
+                border-bottom: 1px solid white;
+                position: absolute;
+                top: 35vh;
+                left: 17.5vw;
+            }
+
+            .d5 {
+                margin: 0;
+                height: 15vh;
+                width: 20vw;
+                text-align: center;
+                border-right: 1px solid white;
+                border-bottom: 1px solid white;
+                position: absolute;
+                top: 35vh;
+                left: 37.5vw;
+            }
+
+            .d6 {
+                margin: 0;
+                height: 15vh;
+                width: 20vw;
+                text-align: center;
+                border-bottom: 1px solid white;
+                position: absolute;
+                top: 35vh;
+                left: 57.5vw;
+            }
+
+            .d7 {
+                margin: 0;
+                height: 15vh;
+                width: 20vw;
+                text-align: center;
+                border-right: 1px solid white;
+                position: absolute;
+                top: 50vh;
+                left: 17.5vw;
+            }
+
+            .d8 {
+                margin: 0;
+                height: 15vh;
+                width: 20vw;
+                text-align: center;
+                border-right: 1px solid white;
+                position: absolute;
+                top: 50vh;
+                left: 37.5vw;
+            }
+
+            .d9 {
+                margin: 0;
+                height: 15vh;
+                width: 20vw;
+                text-align: center;
+                position: absolute;
+                top: 50vh;
+                left: 57.5vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title"></div>
+    <div class="d1"></div>
+    <div class="d2"></div>
+    <div class="d3"></div>
+    <div class="d4"></div>
+    <div class="d5"></div>
+    <div class="d6"></div>
+    <div class="d7"></div>
+    <div class="d8"></div>
+    <div class="d9"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        var query = matchMedia("(orientation:portrait)");
+        if (query.matches) {
+            var lock = 0;
+            var count = 1;
+            $(".d1").on("touchstart", function () {
+                var s=new Audio(".wav");
+                s.play();
+
+                if ($(".d1").text() == "" && lock == 0) {
+                    if (count % 2 != 0) {
+                        $(".d1").text("x");
+                        $(".d1").css("background", "url('X.png')");
+                        $(".d1").css("background-size", "20vw 15vh");
+                    }
+                    else {
+                        $(".d1").text("o");
+                        $(".d1").css("background", "url('O.png')");
+                        $(".d1").css("background-size", "20vw 15vh");
+                    }
+                    var r = check();
+                    if (r != 0) {
+                        lock = 1;
+                        if (count % 2 != 0) {
+                            $(".title").text("Player X Wins");
+                            if (r == 13) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d2").css("background", "url('RX.png')");
+                                $(".d2").css("background-size", "20vw 15vh");
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 46) {
+                                $(".d4").css("background", "url('RX.png')");
+                                $(".d4").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d6").css("background", "url('RX.png')");
+                                $(".d6").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 79) {
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                                $(".d8").css("background", "url('RX.png')");
+                                $(".d8").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 17) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d4").css("background", "url('RX.png')");
+                                $(".d4").css("background-size", "20vw 15vh");
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 28) {
+                                $(".d2").css("background", "url('RX.png')");
+                                $(".d2").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d8").css("background", "url('RX.png')");
+                                $(".d8").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 39) {
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                                $(".d6").css("background", "url('RX.png')");
+                                $(".d6").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 19) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 37) {
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                            }
+                        }
+                        else {
+                            $(".title").text("Player O Wins");
+                            if (r == 13) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d2").css("background", "url('RO.png')");
+                                $(".d2").css("background-size", "20vw 15vh");
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 46) {
+                                $(".d4").css("background", "url('RO.png')");
+                                $(".d4").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d6").css("background", "url('RO.png')");
+                                $(".d6").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 79) {
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                                $(".d8").css("background", "url('RO.png')");
+                                $(".d8").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 17) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d4").css("background", "url('RO.png')");
+                                $(".d4").css("background-size", "20vw 15vh");
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 28) {
+                                $(".d2").css("background", "url('RO.png')");
+                                $(".d2").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d8").css("background", "url('RO.png')");
+                                $(".d8").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 39) {
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                                $(".d6").css("background", "url('RO.png')");
+                                $(".d6").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 19) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 37) {
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                            }
+                        }
+                    }
+                    count++;
+                }
+            });
+
+            $(".d2").on("touchstart", function () {
+                if ($(".d2").text() == "" && lock == 0) {
+                    var s=new Audio("s.wav");
+                    s.play();
+                   
+                    if (count % 2 != 0) {
+                        $(".d2").text("x");
+                        $(".d2").css("background", "url('X.png')");
+                        $(".d2").css("background-size", "20vw 15vh");
+                    }
+                    else {
+                        $(".d2").text("o");
+                        $(".d2").css("background", "url('O.png')");
+                        $(".d2").css("background-size", "20vw 15vh");
+                    }
+                    var r = check();
+                    if (r != 0) {
+                        lock = 1;
+                        if (count % 2 != 0) {
+                            $(".title").text("Player X Wins");
+                            if (r == 13) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d2").css("background", "url('RX.png')");
+                                $(".d2").css("background-size", "20vw 15vh");
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 46) {
+                                $(".d4").css("background", "url('RX.png')");
+                                $(".d4").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d6").css("background", "url('RX.png')");
+                                $(".d6").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 79) {
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                                $(".d8").css("background", "url('RX.png')");
+                                $(".d8").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 17) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d4").css("background", "url('RX.png')");
+                                $(".d4").css("background-size", "20vw 15vh");
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 28) {
+                                $(".d2").css("background", "url('RX.png')");
+                                $(".d2").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d8").css("background", "url('RX.png')");
+                                $(".d8").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 39) {
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                                $(".d6").css("background", "url('RX.png')");
+                                $(".d6").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 19) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 37) {
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                            }
+                        }
+                        else {
+                            $(".title").text("Player O Wins");
+                            if (r == 13) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d2").css("background", "url('RO.png')");
+                                $(".d2").css("background-size", "20vw 15vh");
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 46) {
+                                $(".d4").css("background", "url('RO.png')");
+                                $(".d4").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d6").css("background", "url('RO.png')");
+                                $(".d6").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 79) {
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                                $(".d8").css("background", "url('RO.png')");
+                                $(".d8").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 17) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d4").css("background", "url('RO.png')");
+                                $(".d4").css("background-size", "20vw 15vh");
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 28) {
+                                $(".d2").css("background", "url('RO.png')");
+                                $(".d2").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d8").css("background", "url('RO.png')");
+                                $(".d8").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 39) {
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                                $(".d6").css("background", "url('RO.png')");
+                                $(".d6").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 19) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 37) {
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                            }
+                        }
+                    }
+                    count++;
+                }
+            });
+
+            $(".d3").on("touchstart", function () {
+                if ($(".d3").text() == "" && lock == 0) {
+                    var s=new Audio("s.wav");
+                s.play();
+                    if (count % 2 != 0) {
+                        $(".d3").text("x");
+                        $(".d3").css("background", "url('X.png')");
+                        $(".d3").css("background-size", "20vw 15vh");
+                    }
+                    else {
+                        $(".d3").text("o");
+                        $(".d3").css("background", "url('O.png')");
+                        $(".d3").css("background-size", "20vw 15vh");
+                    }
+                    var r = check();
+                    if (r != 0) {
+                        lock = 1;
+                        if (count % 2 != 0) {
+                            $(".title").text("Player X Wins");
+                            if (r == 13) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d2").css("background", "url('RX.png')");
+                                $(".d2").css("background-size", "20vw 15vh");
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 46) {
+                                $(".d4").css("background", "url('RX.png')");
+                                $(".d4").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d6").css("background", "url('RX.png')");
+                                $(".d6").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 79) {
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                                $(".d8").css("background", "url('RX.png')");
+                                $(".d8").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 17) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d4").css("background", "url('RX.png')");
+                                $(".d4").css("background-size", "20vw 15vh");
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 28) {
+                                $(".d2").css("background", "url('RX.png')");
+                                $(".d2").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d8").css("background", "url('RX.png')");
+                                $(".d8").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 39) {
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                                $(".d6").css("background", "url('RX.png')");
+                                $(".d6").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 19) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 37) {
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                            }
+                        }
+                        else {
+                            $(".title").text("Player O Wins");
+                            if (r == 13) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d2").css("background", "url('RO.png')");
+                                $(".d2").css("background-size", "20vw 15vh");
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 46) {
+                                $(".d4").css("background", "url('RO.png')");
+                                $(".d4").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d6").css("background", "url('RO.png')");
+                                $(".d6").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 79) {
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                                $(".d8").css("background", "url('RO.png')");
+                                $(".d8").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 17) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d4").css("background", "url('RO.png')");
+                                $(".d4").css("background-size", "20vw 15vh");
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 28) {
+                                $(".d2").css("background", "url('RO.png')");
+                                $(".d2").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d8").css("background", "url('RO.png')");
+                                $(".d8").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 39) {
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                                $(".d6").css("background", "url('RO.png')");
+                                $(".d6").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 19) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 37) {
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                            }
+                        }
+                    }
+                    count++;
+                }
+            });
+
+            $(".d4").on("touchstart", function () {
+                if ($(".d4").text() == "" && lock == 0) {
+                    var s=new Audio("s.wav");
+                    s.play();
+                    
+                    if (count % 2 != 0) {
+                        $(".d4").text("x");
+                        $(".d4").css("background", "url('X.png')");
+                        $(".d4").css("background-size", "20vw 15vh");
+                    }
+                    else {
+                        $(".d4").text("o");
+                        $(".d4").css("background", "url('O.png')");
+                        $(".d4").css("background-size", "20vw 15vh");
+                    }
+                    var r = check();
+                    if (r != 0) {
+                        lock = 1;
+                        if (count % 2 != 0) {
+                            $(".title").text("Player X Wins");
+                            if (r == 13) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d2").css("background", "url('RX.png')");
+                                $(".d2").css("background-size", "20vw 15vh");
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 46) {
+                                $(".d4").css("background", "url('RX.png')");
+                                $(".d4").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d6").css("background", "url('RX.png')");
+                                $(".d6").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 79) {
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                                $(".d8").css("background", "url('RX.png')");
+                                $(".d8").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 17) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d4").css("background", "url('RX.png')");
+                                $(".d4").css("background-size", "20vw 15vh");
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 28) {
+                                $(".d2").css("background", "url('RX.png')");
+                                $(".d2").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d8").css("background", "url('RX.png')");
+                                $(".d8").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 39) {
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                                $(".d6").css("background", "url('RX.png')");
+                                $(".d6").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 19) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 37) {
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                            }
+                        }
+                        else {
+                            $(".title").text("Player O Wins");
+                            if (r == 13) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d2").css("background", "url('RO.png')");
+                                $(".d2").css("background-size", "20vw 15vh");
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 46) {
+                                $(".d4").css("background", "url('RO.png')");
+                                $(".d4").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d6").css("background", "url('RO.png')");
+                                $(".d6").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 79) {
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                                $(".d8").css("background", "url('RO.png')");
+                                $(".d8").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 17) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d4").css("background", "url('RO.png')");
+                                $(".d4").css("background-size", "20vw 15vh");
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 28) {
+                                $(".d2").css("background", "url('RO.png')");
+                                $(".d2").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d8").css("background", "url('RO.png')");
+                                $(".d8").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 39) {
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                                $(".d6").css("background", "url('RO.png')");
+                                $(".d6").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 19) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 37) {
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                            }
+                        }
+                    }
+                    count++;
+                }
+            });
+
+            $(".d5").on("touchstart", function () {
+                if ($(".d5").text() == "" && lock == 0){
+                    var s=new Audio("s.wav");
+                s.play();
+                    if (count % 2 != 0) {
+                        $(".d5").text("x");
+                        $(".d5").css("background", "url('X.png')");
+                        $(".d5").css("background-size", "20vw 15vh");
+                    }
+                    else {
+                        $(".d5").text("o");
+                        $(".d5").css("background", "url('O.png')");
+                        $(".d5").css("background-size", "20vw 15vh");
+                    }
+                    var r = check();
+                    if (r != 0) {
+                        lock = 1;
+                        if (count % 2 != 0) {
+                            $(".title").text("Player X Wins");
+                            if (r == 13) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d2").css("background", "url('RX.png')");
+                                $(".d2").css("background-size", "20vw 15vh");
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 46) {
+                                $(".d4").css("background", "url('RX.png')");
+                                $(".d4").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d6").css("background", "url('RX.png')");
+                                $(".d6").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 79) {
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                                $(".d8").css("background", "url('RX.png')");
+                                $(".d8").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 17) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d4").css("background", "url('RX.png')");
+                                $(".d4").css("background-size", "20vw 15vh");
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 28) {
+                                $(".d2").css("background", "url('RX.png')");
+                                $(".d2").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d8").css("background", "url('RX.png')");
+                                $(".d8").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 39) {
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                                $(".d6").css("background", "url('RX.png')");
+                                $(".d6").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 19) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 37) {
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                            }
+                        }
+                        else {
+                            $(".title").text("Player O Wins");
+                            if (r == 13) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d2").css("background", "url('RO.png')");
+                                $(".d2").css("background-size", "20vw 15vh");
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 46) {
+                                $(".d4").css("background", "url('RO.png')");
+                                $(".d4").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d6").css("background", "url('RO.png')");
+                                $(".d6").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 79) {
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                                $(".d8").css("background", "url('RO.png')");
+                                $(".d8").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 17) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d4").css("background", "url('RO.png')");
+                                $(".d4").css("background-size", "20vw 15vh");
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 28) {
+                                $(".d2").css("background", "url('RO.png')");
+                                $(".d2").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d8").css("background", "url('RO.png')");
+                                $(".d8").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 39) {
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                                $(".d6").css("background", "url('RO.png')");
+                                $(".d6").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 19) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 37) {
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                            }
+                        }
+                    }
+                    count++;
+                }
+            });
+
+            $(".d6").on("touchstart", function () {
+                if ($(".d6").text() == "" && lock == 0){
+                    var s=new Audio("s.wav");
+                s.play();
+                    if (count % 2 != 0) {
+                        $(".d6").text("x");
+                        $(".d6").css("background", "url('X.png')");
+                        $(".d6").css("background-size", "20vw 15vh");
+                    }
+                    else {
+                        $(".d6").text("o");
+                        $(".d6").css("background", "url('O.png')");
+                        $(".d6").css("background-size", "20vw 15vh");
+                    }
+                    var r = check();
+                    if (r != 0) {
+                        lock = 1;
+                        if (count % 2 != 0) {
+                            $(".title").text("Player X Wins");
+                            if (r == 13) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d2").css("background", "url('RX.png')");
+                                $(".d2").css("background-size", "20vw 15vh");
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 46) {
+                                $(".d4").css("background", "url('RX.png')");
+                                $(".d4").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d6").css("background", "url('RX.png')");
+                                $(".d6").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 79) {
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                                $(".d8").css("background", "url('RX.png')");
+                                $(".d8").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 17) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d4").css("background", "url('RX.png')");
+                                $(".d4").css("background-size", "20vw 15vh");
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 28) {
+                                $(".d2").css("background", "url('RX.png')");
+                                $(".d2").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d8").css("background", "url('RX.png')");
+                                $(".d8").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 39) {
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                                $(".d6").css("background", "url('RX.png')");
+                                $(".d6").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 19) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 37) {
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                            }
+                        }
+                        else {
+                            $(".title").text("Player O Wins");
+                            if (r == 13) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d2").css("background", "url('RO.png')");
+                                $(".d2").css("background-size", "20vw 15vh");
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 46) {
+                                $(".d4").css("background", "url('RO.png')");
+                                $(".d4").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d6").css("background", "url('RO.png')");
+                                $(".d6").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 79) {
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                                $(".d8").css("background", "url('RO.png')");
+                                $(".d8").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 17) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d4").css("background", "url('RO.png')");
+                                $(".d4").css("background-size", "20vw 15vh");
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 28) {
+                                $(".d2").css("background", "url('RO.png')");
+                                $(".d2").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d8").css("background", "url('RO.png')");
+                                $(".d8").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 39) {
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                                $(".d6").css("background", "url('RO.png')");
+                                $(".d6").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 19) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 37) {
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                            }
+                        }
+                    }
+                    count++;
+                }
+            });
+
+            $(".d7").on("touchstart", function () {
+                if ($(".d7").text() == "" && lock == 0) {
+                    var s=new Audio("s.wav");
+                    s.play();
+
+                    if (count % 2 != 0) {
+                        $(".d7").text("x");
+                        $(".d7").css("background", "url('X.png')");
+                        $(".d7").css("background-size", "20vw 15vh");
+                    }
+                    else {
+                        $(".d7").text("o");
+                        $(".d7").css("background", "url('O.png')");
+                        $(".d7").css("background-size", "20vw 15vh");
+                    }
+                    var r = check();
+                    if (r != 0) {
+                        lock = 1;
+                        if (count % 2 != 0) {
+                            $(".title").text("Player X Wins");
+                            if (r == 13) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d2").css("background", "url('RX.png')");
+                                $(".d2").css("background-size", "20vw 15vh");
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 46) {
+                                $(".d4").css("background", "url('RX.png')");
+                                $(".d4").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d6").css("background", "url('RX.png')");
+                                $(".d6").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 79) {
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                                $(".d8").css("background", "url('RX.png')");
+                                $(".d8").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 17) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d4").css("background", "url('RX.png')");
+                                $(".d4").css("background-size", "20vw 15vh");
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 28) {
+                                $(".d2").css("background", "url('RX.png')");
+                                $(".d2").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d8").css("background", "url('RX.png')");
+                                $(".d8").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 39) {
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                                $(".d6").css("background", "url('RX.png')");
+                                $(".d6").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 19) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 37) {
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                            }
+                        }
+                        else {
+                            $(".title").text("Player O Wins");
+                            if (r == 13) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d2").css("background", "url('RO.png')");
+                                $(".d2").css("background-size", "20vw 15vh");
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 46) {
+                                $(".d4").css("background", "url('RO.png')");
+                                $(".d4").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d6").css("background", "url('RO.png')");
+                                $(".d6").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 79) {
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                                $(".d8").css("background", "url('RO.png')");
+                                $(".d8").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 17) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d4").css("background", "url('RO.png')");
+                                $(".d4").css("background-size", "20vw 15vh");
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 28) {
+                                $(".d2").css("background", "url('RO.png')");
+                                $(".d2").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d8").css("background", "url('RO.png')");
+                                $(".d8").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 39) {
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                                $(".d6").css("background", "url('RO.png')");
+                                $(".d6").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 19) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 37) {
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                            }
+                        }
+                    }
+                    count++;
+                }
+            });
+
+            $(".d8").on("touchstart", function () {
+                if ($(".d8").text() == "" && lock == 0) {
+                    var s=new Audio("s.wav");
+                    s.play();
+                    
+                    if (count % 2 != 0) {
+                        $(".d8").text("x");
+                        $(".d8").css("background", "url('X.png')");
+                        $(".d8").css("background-size", "20vw 15vh");
+                    }
+                    else {
+                        $(".d8").text("o");
+                        $(".d8").css("background", "url('O.png')");
+                        $(".d8").css("background-size", "20vw 15vh");
+                    }
+                    var r = check();
+                    if (r != 0) {
+                        lock = 1;
+                        if (count % 2 != 0) {
+                            $(".title").text("Player X Wins");
+                            if (r == 13) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d2").css("background", "url('RX.png')");
+                                $(".d2").css("background-size", "20vw 15vh");
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 46) {
+                                $(".d4").css("background", "url('RX.png')");
+                                $(".d4").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d6").css("background", "url('RX.png')");
+                                $(".d6").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 79) {
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                                $(".d8").css("background", "url('RX.png')");
+                                $(".d8").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 17) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d4").css("background", "url('RX.png')");
+                                $(".d4").css("background-size", "20vw 15vh");
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 28) {
+                                $(".d2").css("background", "url('RX.png')");
+                                $(".d2").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d8").css("background", "url('RX.png')");
+                                $(".d8").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 39) {
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                                $(".d6").css("background", "url('RX.png')");
+                                $(".d6").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 19) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 37) {
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                            }
+                        }
+                        else {
+                            $(".title").text("Player O Wins");
+                            if (r == 13) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d2").css("background", "url('RO.png')");
+                                $(".d2").css("background-size", "20vw 15vh");
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 46) {
+                                $(".d4").css("background", "url('RO.png')");
+                                $(".d4").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d6").css("background", "url('RO.png')");
+                                $(".d6").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 79) {
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                                $(".d8").css("background", "url('RO.png')");
+                                $(".d8").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 17) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d4").css("background", "url('RO.png')");
+                                $(".d4").css("background-size", "20vw 15vh");
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 28) {
+                                $(".d2").css("background", "url('RO.png')");
+                                $(".d2").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d8").css("background", "url('RO.png')");
+                                $(".d8").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 39) {
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                                $(".d6").css("background", "url('RO.png')");
+                                $(".d6").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 19) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 37) {
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                            }
+                        }
+                    }
+                    count++;
+                }
+            });
+
+            $(".d9").on("touchstart", function () {
+                if ($(".d9").text() == "" && lock == 0) {
+                    var s=new Audio("s.wav");
+                    s.play();
+
+                    if (count % 2 != 0) {
+                        $(".d9").text("x");
+                        $(".d9").css("background", "url('X.png')");
+                        $(".d9").css("background-size", "20vw 15vh");
+                    }
+                    else {
+                        $(".d9").text("o");
+                        $(".d9").css("background", "url('O.png')");
+                        $(".d9").css("background-size", "20vw 15vh");
+                    }
+                    var r = check();
+                    if (r != 0) {
+                        lock = 1;
+                        if (count % 2 != 0) {
+                            $(".title").text("Player X Wins");
+                            if (r == 13) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d2").css("background", "url('RX.png')");
+                                $(".d2").css("background-size", "20vw 15vh");
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 46) {
+                                $(".d4").css("background", "url('RX.png')");
+                                $(".d4").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d6").css("background", "url('RX.png')");
+                                $(".d6").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 79) {
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                                $(".d8").css("background", "url('RX.png')");
+                                $(".d8").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 17) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d4").css("background", "url('RX.png')");
+                                $(".d4").css("background-size", "20vw 15vh");
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 28) {
+                                $(".d2").css("background", "url('RX.png')");
+                                $(".d2").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d8").css("background", "url('RX.png')");
+                                $(".d8").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 39) {
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                                $(".d6").css("background", "url('RX.png')");
+                                $(".d6").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 19) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 37) {
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                            }
+                        }
+                        else {
+                            $(".title").text("Player O Wins");
+                            if (r == 13) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d2").css("background", "url('RO.png')");
+                                $(".d2").css("background-size", "20vw 15vh");
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 46) {
+                                $(".d4").css("background", "url('RO.png')");
+                                $(".d4").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d6").css("background", "url('RO.png')");
+                                $(".d6").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 79) {
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                                $(".d8").css("background", "url('RO.png')");
+                                $(".d8").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 17) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d4").css("background", "url('RO.png')");
+                                $(".d4").css("background-size", "20vw 15vh");
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 28) {
+                                $(".d2").css("background", "url('RO.png')");
+                                $(".d2").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d8").css("background", "url('RO.png')");
+                                $(".d8").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 39) {
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                                $(".d6").css("background", "url('RO.png')");
+                                $(".d6").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 19) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "20vw 15vh");
+                            }
+                            else if (r == 37) {
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "20vw 15vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "20vw 15vh");
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "20vw 15vh");
+                            }
+                        }
+                    }
+                    count++;
+                }
+            });
+
+            function check() {
+                if ($(".d1").text() != "" && ($(".d1").text() == $(".d2").text() && $(".d2").text() == $(".d3").text())) {
+                    return 13;
+                }
+                else if ($(".d4").text() != "" && ($(".d4").text() == $(".d5").text() && $(".d5").text() == $(".d6").text())) {
+                    return 46;
+                }
+                else if ($(".d7").text() != "" && ($(".d7").text() == $(".d8").text() && $(".d8").text() == $(".d9").text())) {
+                    return 79;
+                }
+                else if ($(".d1").text() != "" && ($(".d1").text() == $(".d4").text() && $(".d4").text() == $(".d7").text())) {
+                    return 17;
+                }
+                else if ($(".d2").text() != "" && ($(".d2").text() == $(".d5").text() && $(".d5").text() == $(".d8").text())) {
+                    return 28;
+                }
+                else if ($(".d3").text() != "" && ($(".d3").text() == $(".d6").text() && $(".d6").text() == $(".d9").text())) {
+                    return 39;
+                }
+                else if ($(".d1").text() != "" && ($(".d1").text() == $(".d5").text() && $(".d5").text() == $(".d9").text())) {
+                    return 19;
+                }
+                else if ($(".d3").text() != "" && ($(".d3").text() == $(".d5").text() && $(".d5").text() == $(".d7").text())) {
+                    return 37;
+                }
+                else {
+                    return 0;
+                }
+            }
+        }
+        else {
+            var lock = 0;
+            var count = 1;
+            $(".d1").on("click", function () {
+                if ($(".d1").text() == "" && lock == 0) {
+                    var s=new Audio("s.wav");
+                    s.play();
+                    
+                    if (count % 2 != 0) {
+                        $(".d1").text("x");
+                        $(".d1").css("background", "url('X.png')");
+                        $(".d1").css("background-size", "10vw 20vh");
+                    }
+                    else {
+                        $(".d1").text("o");
+                        $(".d1").css("background", "url('O.png')");
+                        $(".d1").css("background-size", "10vw 20vh");
+                    }
+                    var r = check();
+                    if (r != 0) {
+                        lock = 1;
+                        if (count % 2 != 0) {
+                            $(".title").text("Player X Wins");
+                            if (r == 13) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d2").css("background", "url('RX.png')");
+                                $(".d2").css("background-size", "10vw 20vh");
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 46) {
+                                $(".d4").css("background", "url('RX.png')");
+                                $(".d4").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d6").css("background", "url('RX.png')");
+                                $(".d6").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 79) {
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                                $(".d8").css("background", "url('RX.png')");
+                                $(".d8").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 17) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d4").css("background", "url('RX.png')");
+                                $(".d4").css("background-size", "10vw 20vh");
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 28) {
+                                $(".d2").css("background", "url('RX.png')");
+                                $(".d2").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d8").css("background", "url('RX.png')");
+                                $(".d8").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 39) {
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                                $(".d6").css("background", "url('RX.png')");
+                                $(".d6").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 19) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 37) {
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                            }
+                        }
+                        else {
+                            $(".title").text("Player O Wins");
+                            if (r == 13) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d2").css("background", "url('RO.png')");
+                                $(".d2").css("background-size", "10vw 20vh");
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 46) {
+                                $(".d4").css("background", "url('RO.png')");
+                                $(".d4").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d6").css("background", "url('RO.png')");
+                                $(".d6").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 79) {
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                                $(".d8").css("background", "url('RO.png')");
+                                $(".d8").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 17) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d4").css("background", "url('RO.png')");
+                                $(".d4").css("background-size", "10vw 20vh");
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 28) {
+                                $(".d2").css("background", "url('RO.png')");
+                                $(".d2").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d8").css("background", "url('RO.png')");
+                                $(".d8").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 39) {
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                                $(".d6").css("background", "url('RO.png')");
+                                $(".d6").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 19) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 37) {
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                            }
+                        }
+                    }
+                    count++;
+                }
+            });
+
+            $(".d2").on("click", function () {
+                if ($(".d2").text() == "" && lock == 0) {
+                    var s=new Audio("s.wav");
+                    s.play();
+                    
+                    if (count % 2 != 0) {
+                        $(".d2").text("x");
+                        $(".d2").css("background", "url('X.png')");
+                        $(".d2").css("background-size", "10vw 20vh");
+                    }
+                    else {
+                        $(".d2").text("o");
+                        $(".d2").css("background", "url('O.png')");
+                        $(".d2").css("background-size", "10vw 20vh");
+                    }
+                    var r = check();
+                    if (r != 0) {
+                        lock = 1;
+                        if (count % 2 != 0) {
+                            $(".title").text("Player X Wins");
+                            if (r == 13) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d2").css("background", "url('RX.png')");
+                                $(".d2").css("background-size", "10vw 20vh");
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 46) {
+                                $(".d4").css("background", "url('RX.png')");
+                                $(".d4").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d6").css("background", "url('RX.png')");
+                                $(".d6").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 79) {
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                                $(".d8").css("background", "url('RX.png')");
+                                $(".d8").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 17) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d4").css("background", "url('RX.png')");
+                                $(".d4").css("background-size", "10vw 20vh");
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 28) {
+                                $(".d2").css("background", "url('RX.png')");
+                                $(".d2").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d8").css("background", "url('RX.png')");
+                                $(".d8").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 39) {
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                                $(".d6").css("background", "url('RX.png')");
+                                $(".d6").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 19) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 37) {
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                            }
+                        }
+                        else {
+                            $(".title").text("Player O Wins");
+                            if (r == 13) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d2").css("background", "url('RO.png')");
+                                $(".d2").css("background-size", "10vw 20vh");
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 46) {
+                                $(".d4").css("background", "url('RO.png')");
+                                $(".d4").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d6").css("background", "url('RO.png')");
+                                $(".d6").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 79) {
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                                $(".d8").css("background", "url('RO.png')");
+                                $(".d8").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 17) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d4").css("background", "url('RO.png')");
+                                $(".d4").css("background-size", "10vw 20vh");
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 28) {
+                                $(".d2").css("background", "url('RO.png')");
+                                $(".d2").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d8").css("background", "url('RO.png')");
+                                $(".d8").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 39) {
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                                $(".d6").css("background", "url('RO.png')");
+                                $(".d6").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 19) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 37) {
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                            }
+                        }
+                    }
+                    count++;
+                }
+            });
+
+            $(".d3").on("click", function () {
+                if ($(".d3").text() == "" && lock == 0) {
+                    var s=new Audio("s.wav");
+                    s.play();
+                    
+                    if (count % 2 != 0) {
+                        $(".d3").text("x");
+                        $(".d3").css("background", "url('X.png')");
+                        $(".d3").css("background-size", "10vw 20vh");
+                    }
+                    else {
+                        $(".d3").text("o");
+                        $(".d3").css("background", "url('O.png')");
+                        $(".d3").css("background-size", "10vw 20vh");
+                    }
+                    var r = check();
+                    if (r != 0) {
+                        lock = 1;
+                        if (count % 2 != 0) {
+                            $(".title").text("Player X Wins");
+                            if (r == 13) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d2").css("background", "url('RX.png')");
+                                $(".d2").css("background-size", "10vw 20vh");
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 46) {
+                                $(".d4").css("background", "url('RX.png')");
+                                $(".d4").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d6").css("background", "url('RX.png')");
+                                $(".d6").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 79) {
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                                $(".d8").css("background", "url('RX.png')");
+                                $(".d8").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 17) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d4").css("background", "url('RX.png')");
+                                $(".d4").css("background-size", "10vw 20vh");
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 28) {
+                                $(".d2").css("background", "url('RX.png')");
+                                $(".d2").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d8").css("background", "url('RX.png')");
+                                $(".d8").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 39) {
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                                $(".d6").css("background", "url('RX.png')");
+                                $(".d6").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 19) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 37) {
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                            }
+                        }
+                        else {
+                            $(".title").text("Player O Wins");
+                            if (r == 13) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d2").css("background", "url('RO.png')");
+                                $(".d2").css("background-size", "10vw 20vh");
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 46) {
+                                $(".d4").css("background", "url('RO.png')");
+                                $(".d4").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d6").css("background", "url('RO.png')");
+                                $(".d6").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 79) {
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                                $(".d8").css("background", "url('RO.png')");
+                                $(".d8").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 17) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d4").css("background", "url('RO.png')");
+                                $(".d4").css("background-size", "10vw 20vh");
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 28) {
+                                $(".d2").css("background", "url('RO.png')");
+                                $(".d2").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d8").css("background", "url('RO.png')");
+                                $(".d8").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 39) {
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                                $(".d6").css("background", "url('RO.png')");
+                                $(".d6").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 19) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 37) {
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                            }
+                        }
+                    }
+                    count++;
+                }
+            });
+
+            $(".d4").on("click", function () {
+                if ($(".d4").text() == "" && lock == 0) {
+                    var s=new Audio("s.wav");
+                    s.play();
+                    
+                    if (count % 2 != 0) {
+                        $(".d4").text("x");
+                        $(".d4").css("background", "url('X.png')");
+                        $(".d4").css("background-size", "10vw 20vh");
+                    }
+                    else {
+                        $(".d4").text("o");
+                        $(".d4").css("background", "url('O.png')");
+                        $(".d4").css("background-size", "10vw 20vh");
+                    }
+                    var r = check();
+                    if (r != 0) {
+                        lock = 1;
+                        if (count % 2 != 0) {
+                            $(".title").text("Player X Wins");
+                            if (r == 13) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d2").css("background", "url('RX.png')");
+                                $(".d2").css("background-size", "10vw 20vh");
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 46) {
+                                $(".d4").css("background", "url('RX.png')");
+                                $(".d4").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d6").css("background", "url('RX.png')");
+                                $(".d6").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 79) {
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                                $(".d8").css("background", "url('RX.png')");
+                                $(".d8").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 17) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d4").css("background", "url('RX.png')");
+                                $(".d4").css("background-size", "10vw 20vh");
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 28) {
+                                $(".d2").css("background", "url('RX.png')");
+                                $(".d2").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d8").css("background", "url('RX.png')");
+                                $(".d8").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 39) {
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                                $(".d6").css("background", "url('RX.png')");
+                                $(".d6").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 19) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 37) {
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                            }
+                        }
+                        else {
+                            $(".title").text("Player O Wins");
+                            if (r == 13) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d2").css("background", "url('RO.png')");
+                                $(".d2").css("background-size", "10vw 20vh");
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 46) {
+                                $(".d4").css("background", "url('RO.png')");
+                                $(".d4").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d6").css("background", "url('RO.png')");
+                                $(".d6").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 79) {
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                                $(".d8").css("background", "url('RO.png')");
+                                $(".d8").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 17) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d4").css("background", "url('RO.png')");
+                                $(".d4").css("background-size", "10vw 20vh");
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 28) {
+                                $(".d2").css("background", "url('RO.png')");
+                                $(".d2").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d8").css("background", "url('RO.png')");
+                                $(".d8").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 39) {
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                                $(".d6").css("background", "url('RO.png')");
+                                $(".d6").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 19) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 37) {
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                            }
+                        }
+                    }
+                    count++;
+                }
+            });
+
+            $(".d5").on("click", function () {
+                if ($(".d5").text() == "" && lock == 0) {
+                    var s=new Audio("s.wav");
+                    s.play();
+                    
+                    if (count % 2 != 0) {
+                        $(".d5").text("x");
+                        $(".d5").css("background", "url('X.png')");
+                        $(".d5").css("background-size", "10vw 20vh");
+                    }
+                    else {
+                        $(".d5").text("o");
+                        $(".d5").css("background", "url('O.png')");
+                        $(".d5").css("background-size", "10vw 20vh");
+                    }
+                    var r = check();
+                    if (r != 0) {
+                        lock = 1;
+                        if (count % 2 != 0) {
+                            $(".title").text("Player X Wins");
+                            if (r == 13) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d2").css("background", "url('RX.png')");
+                                $(".d2").css("background-size", "10vw 20vh");
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 46) {
+                                $(".d4").css("background", "url('RX.png')");
+                                $(".d4").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d6").css("background", "url('RX.png')");
+                                $(".d6").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 79) {
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                                $(".d8").css("background", "url('RX.png')");
+                                $(".d8").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 17) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d4").css("background", "url('RX.png')");
+                                $(".d4").css("background-size", "10vw 20vh");
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 28) {
+                                $(".d2").css("background", "url('RX.png')");
+                                $(".d2").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d8").css("background", "url('RX.png')");
+                                $(".d8").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 39) {
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                                $(".d6").css("background", "url('RX.png')");
+                                $(".d6").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 19) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 37) {
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                            }
+                        }
+                        else {
+                            $(".title").text("Player O Wins");
+                            if (r == 13) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d2").css("background", "url('RO.png')");
+                                $(".d2").css("background-size", "10vw 20vh");
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 46) {
+                                $(".d4").css("background", "url('RO.png')");
+                                $(".d4").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d6").css("background", "url('RO.png')");
+                                $(".d6").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 79) {
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                                $(".d8").css("background", "url('RO.png')");
+                                $(".d8").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 17) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d4").css("background", "url('RO.png')");
+                                $(".d4").css("background-size", "10vw 20vh");
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 28) {
+                                $(".d2").css("background", "url('RO.png')");
+                                $(".d2").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d8").css("background", "url('RO.png')");
+                                $(".d8").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 39) {
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                                $(".d6").css("background", "url('RO.png')");
+                                $(".d6").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 19) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 37) {
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                            }
+                        }
+                    }
+                    count++;
+                }
+            });
+
+            $(".d6").on("click", function () {
+                if ($(".d6").text() == "" && lock == 0) {
+                    var s=new Audio("s.wav");
+                    s.play();
+                    
+                    if (count % 2 != 0) {
+                        $(".d6").text("x");
+                        $(".d6").css("background", "url('X.png')");
+                        $(".d6").css("background-size", "10vw 20vh");
+                    }
+                    else {
+                        $(".d6").text("o");
+                        $(".d6").css("background", "url('O.png')");
+                        $(".d6").css("background-size", "10vw 20vh");
+                    }
+                    var r = check();
+                    if (r != 0) {
+                        lock = 1;
+                        if (count % 2 != 0) {
+                            $(".title").text("Player X Wins");
+                            if (r == 13) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d2").css("background", "url('RX.png')");
+                                $(".d2").css("background-size", "10vw 20vh");
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 46) {
+                                $(".d4").css("background", "url('RX.png')");
+                                $(".d4").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d6").css("background", "url('RX.png')");
+                                $(".d6").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 79) {
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                                $(".d8").css("background", "url('RX.png')");
+                                $(".d8").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 17) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d4").css("background", "url('RX.png')");
+                                $(".d4").css("background-size", "10vw 20vh");
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 28) {
+                                $(".d2").css("background", "url('RX.png')");
+                                $(".d2").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d8").css("background", "url('RX.png')");
+                                $(".d8").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 39) {
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                                $(".d6").css("background", "url('RX.png')");
+                                $(".d6").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 19) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 37) {
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                            }
+                        }
+                        else {
+                            $(".title").text("Player O Wins");
+                            if (r == 13) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d2").css("background", "url('RO.png')");
+                                $(".d2").css("background-size", "10vw 20vh");
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 46) {
+                                $(".d4").css("background", "url('RO.png')");
+                                $(".d4").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d6").css("background", "url('RO.png')");
+                                $(".d6").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 79) {
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                                $(".d8").css("background", "url('RO.png')");
+                                $(".d8").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 17) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d4").css("background", "url('RO.png')");
+                                $(".d4").css("background-size", "10vw 20vh");
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 28) {
+                                $(".d2").css("background", "url('RO.png')");
+                                $(".d2").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d8").css("background", "url('RO.png')");
+                                $(".d8").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 39) {
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                                $(".d6").css("background", "url('RO.png')");
+                                $(".d6").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 19) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 37) {
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                            }
+                        }
+                    }
+                    count++;
+                }
+            });
+
+            $(".d7").on("click", function () {
+                if ($(".d7").text() == "" && lock == 0) {
+                    var s=new Audio("s.wav");
+                    s.play();
+                    
+                    if (count % 2 != 0) {
+                        $(".d7").text("x");
+                        $(".d7").css("background", "url('X.png')");
+                        $(".d7").css("background-size", "10vw 20vh");
+                    }
+                    else {
+                        $(".d7").text("o");
+                        $(".d7").css("background", "url('O.png')");
+                        $(".d7").css("background-size", "10vw 20vh");
+                    }
+                    var r = check();
+                    if (r != 0) {
+                        lock = 1;
+                        if (count % 2 != 0) {
+                            $(".title").text("Player X Wins");
+                            if (r == 13) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d2").css("background", "url('RX.png')");
+                                $(".d2").css("background-size", "10vw 20vh");
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 46) {
+                                $(".d4").css("background", "url('RX.png')");
+                                $(".d4").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d6").css("background", "url('RX.png')");
+                                $(".d6").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 79) {
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                                $(".d8").css("background", "url('RX.png')");
+                                $(".d8").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 17) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d4").css("background", "url('RX.png')");
+                                $(".d4").css("background-size", "10vw 20vh");
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 28) {
+                                $(".d2").css("background", "url('RX.png')");
+                                $(".d2").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d8").css("background", "url('RX.png')");
+                                $(".d8").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 39) {
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                                $(".d6").css("background", "url('RX.png')");
+                                $(".d6").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 19) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 37) {
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                            }
+                        }
+                        else {
+                            $(".title").text("Player O Wins");
+                            if (r == 13) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d2").css("background", "url('RO.png')");
+                                $(".d2").css("background-size", "10vw 20vh");
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 46) {
+                                $(".d4").css("background", "url('RO.png')");
+                                $(".d4").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d6").css("background", "url('RO.png')");
+                                $(".d6").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 79) {
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                                $(".d8").css("background", "url('RO.png')");
+                                $(".d8").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 17) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d4").css("background", "url('RO.png')");
+                                $(".d4").css("background-size", "10vw 20vh");
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 28) {
+                                $(".d2").css("background", "url('RO.png')");
+                                $(".d2").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d8").css("background", "url('RO.png')");
+                                $(".d8").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 39) {
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                                $(".d6").css("background", "url('RO.png')");
+                                $(".d6").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 19) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 37) {
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                            }
+                        }
+                    }
+                    count++;
+                }
+            });
+
+            $(".d8").on("click", function () {
+                if ($(".d8").text() == "" && lock == 0) {
+                    var s=new Audio("s.wav");
+                    s.play();
+                   
+                    if (count % 2 != 0) {
+                        $(".d8").text("x");
+                        $(".d8").css("background", "url('X.png')");
+                        $(".d8").css("background-size", "10vw 20vh");
+                    }
+                    else {
+                        $(".d8").text("o");
+                        $(".d8").css("background", "url('O.png')");
+                        $(".d8").css("background-size", "10vw 20vh");
+                    }
+                    var r = check();
+                    if (r != 0) {
+                        lock = 1;
+                        if (count % 2 != 0) {
+                            $(".title").text("Player X Wins");
+                            if (r == 13) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d2").css("background", "url('RX.png')");
+                                $(".d2").css("background-size", "10vw 20vh");
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 46) {
+                                $(".d4").css("background", "url('RX.png')");
+                                $(".d4").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d6").css("background", "url('RX.png')");
+                                $(".d6").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 79) {
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                                $(".d8").css("background", "url('RX.png')");
+                                $(".d8").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 17) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d4").css("background", "url('RX.png')");
+                                $(".d4").css("background-size", "10vw 20vh");
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 28) {
+                                $(".d2").css("background", "url('RX.png')");
+                                $(".d2").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d8").css("background", "url('RX.png')");
+                                $(".d8").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 39) {
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                                $(".d6").css("background", "url('RX.png')");
+                                $(".d6").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 19) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 37) {
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                            }
+                        }
+                        else {
+                            $(".title").text("Player O Wins");
+                            if (r == 13) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d2").css("background", "url('RO.png')");
+                                $(".d2").css("background-size", "10vw 20vh");
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 46) {
+                                $(".d4").css("background", "url('RO.png')");
+                                $(".d4").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d6").css("background", "url('RO.png')");
+                                $(".d6").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 79) {
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                                $(".d8").css("background", "url('RO.png')");
+                                $(".d8").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 17) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d4").css("background", "url('RO.png')");
+                                $(".d4").css("background-size", "10vw 20vh");
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 28) {
+                                $(".d2").css("background", "url('RO.png')");
+                                $(".d2").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d8").css("background", "url('RO.png')");
+                                $(".d8").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 39) {
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                                $(".d6").css("background", "url('RO.png')");
+                                $(".d6").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 19) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 37) {
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                            }
+                        }
+                    }
+                    count++;
+                }
+            });
+
+            $(".d9").on("click", function () {
+                if ($(".d9").text() == "" && lock == 0) {
+                    var s=new Audio("s.wav");
+                    s.play();
+                    
+                    if (count % 2 != 0) {
+                        $(".d9").text("x");
+                        $(".d9").css("background", "url('X.png')");
+                        $(".d9").css("background-size", "10vw 20vh");
+                    }
+                    else {
+                        $(".d9").text("o");
+                        $(".d9").css("background", "url('O.png')");
+                        $(".d9").css("background-size", "10vw 20vh");
+                    }
+                    var r = check();
+                    if (r != 0) {
+                        lock = 1;
+                        if (count % 2 != 0) {
+                            $(".title").text("Player X Wins");
+                            if (r == 13) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d2").css("background", "url('RX.png')");
+                                $(".d2").css("background-size", "10vw 20vh");
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 46) {
+                                $(".d4").css("background", "url('RX.png')");
+                                $(".d4").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d6").css("background", "url('RX.png')");
+                                $(".d6").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 79) {
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                                $(".d8").css("background", "url('RX.png')");
+                                $(".d8").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 17) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d4").css("background", "url('RX.png')");
+                                $(".d4").css("background-size", "10vw 20vh");
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 28) {
+                                $(".d2").css("background", "url('RX.png')");
+                                $(".d2").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d8").css("background", "url('RX.png')");
+                                $(".d8").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 39) {
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                                $(".d6").css("background", "url('RX.png')");
+                                $(".d6").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 19) {
+                                $(".d1").css("background", "url('RX.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RX.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 37) {
+                                $(".d3").css("background", "url('RX.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RX.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d7").css("background", "url('RX.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                            }
+                        }
+                        else {
+                            $(".title").text("Player O Wins");
+                            if (r == 13) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d2").css("background", "url('RO.png')");
+                                $(".d2").css("background-size", "10vw 20vh");
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 46) {
+                                $(".d4").css("background", "url('RO.png')");
+                                $(".d4").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d6").css("background", "url('RO.png')");
+                                $(".d6").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 79) {
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                                $(".d8").css("background", "url('RO.png')");
+                                $(".d8").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 17) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d4").css("background", "url('RO.png')");
+                                $(".d4").css("background-size", "10vw 20vh");
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 28) {
+                                $(".d2").css("background", "url('RO.png')");
+                                $(".d2").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d8").css("background", "url('RO.png')");
+                                $(".d8").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 39) {
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                                $(".d6").css("background", "url('RO.png')");
+                                $(".d6").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 19) {
+                                $(".d1").css("background", "url('RO.png')");
+                                $(".d1").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d9").css("background", "url('RO.png')");
+                                $(".d9").css("background-size", "10vw 20vh");
+                            }
+                            else if (r == 37) {
+                                $(".d3").css("background", "url('RO.png')");
+                                $(".d3").css("background-size", "10vw 20vh");
+                                $(".d5").css("background", "url('RO.png')");
+                                $(".d5").css("background-size", "10vw 20vh");
+                                $(".d7").css("background", "url('RO.png')");
+                                $(".d7").css("background-size", "10vw 20vh");
+                            }
+                        }
+                    }
+                    count++;
+                }
+            });
+
+            function check() {
+                if ($(".d1").text() != "" && ($(".d1").text() == $(".d2").text() && $(".d2").text() == $(".d3").text())) {
+                    return 13;
+                }
+                else if ($(".d4").text() != "" && ($(".d4").text() == $(".d5").text() && $(".d5").text() == $(".d6").text())) {
+                    return 46;
+                }
+                else if ($(".d7").text() != "" && ($(".d7").text() == $(".d8").text() && $(".d8").text() == $(".d9").text())) {
+                    return 79;
+                }
+                else if ($(".d1").text() != "" && ($(".d1").text() == $(".d4").text() && $(".d4").text() == $(".d7").text())) {
+                    return 17;
+                }
+                else if ($(".d2").text() != "" && ($(".d2").text() == $(".d5").text() && $(".d5").text() == $(".d8").text())) {
+                    return 28;
+                }
+                else if ($(".d3").text() != "" && ($(".d3").text() == $(".d6").text() && $(".d6").text() == $(".d9").text())) {
+                    return 39;
+                }
+                else if ($(".d1").text() != "" && ($(".d1").text() == $(".d5").text() && $(".d5").text() == $(".d9").text())) {
+                    return 19;
+                }
+                else if ($(".d3").text() != "" && ($(".d3").text() == $(".d5").text() && $(".d5").text() == $(".d7").text())) {
+                    return 37;
+                }
+                else {
+                    return 0;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

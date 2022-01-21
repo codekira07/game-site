@@ -1,0 +1,2571 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<style type="text/css">
+		body {
+			margin: 0;
+			height: 100vh;
+			width: 100vw;
+			background: skyblue;
+			position: relative;
+			overflow: hidden;
+		}
+
+		p {
+			margin: 0;
+			font-size: 2rem;
+			font-weight: bold;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		div {
+			font-size: 1px;
+		}
+
+		.sun {
+			margin: 0;
+			height: 20vh;
+			width: 10vw;
+			background: url("sun.png");
+			background-size: 10vw 20vh;
+			position: absolute;
+			top: 0;
+			left: 42vw;
+		}
+
+		@keyframes x {
+			100% {
+				left: 90vw;
+			}
+		}
+
+		.cloud1 {
+			margin: 0;
+			height: 13vh;
+			width: 9vw;
+			background: url("cloud.png");
+			background-size: 9vw 13vh;
+			position: absolute;
+			top: 5vh;
+			left: 0;
+			animation: x;
+			animation-duration: 7s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+		}
+
+		.cloud2 {
+			margin: 0;
+			height: 10vh;
+			width: 7vw;
+			background: url("cloud.png");
+			background-size: 7vw 10vh;
+			position: absolute;
+			top: 5vh;
+			left: 0vw;
+			animation: x;
+			animation-duration: 9s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+		}
+
+		.cloud3 {
+			margin: 0;
+			height: 15vh;
+			width: 13vw;
+			background: url("cloud.png");
+			background-size: 13vw 15vh;
+			position: absolute;
+			top: 5vh;
+			left: 0vw;
+			animation: x;
+			animation-duration: 11s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+		}
+
+		.cloud4 {
+			margin: 0;
+			height: 15vh;
+			width: 10vw;
+			background: url("cloud.png");
+			background-size: 10vw 15vh;
+			position: absolute;
+			top: 5vh;
+			left: 0vw;
+			animation: x;
+			animation-duration: 13s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+		}
+
+		.cloud5 {
+			margin: 0;
+			height: 15vh;
+			width: 10vw;
+			background: url("cloud.png");
+			background-size: 10vw 15vh;
+			position: absolute;
+			top: 5vh;
+			left: 0vw;
+			animation: x;
+			animation-duration: 15s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+		}
+
+		/*row 1*/
+
+		.r1e1 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			color: rgba(0, 0, 0, 0);
+			position: absolute;
+			top: 50vh;
+			left: 0;
+		}
+
+		.r1e2 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			position: absolute;
+			top: 50vh;
+			left: 5vw;
+		}
+
+		.r1e3 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			position: absolute;
+			top: 50vh;
+			left: 10vw;
+		}
+
+		.r1e4 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			position: absolute;
+			top: 50vh;
+			left: 15vw;
+		}
+
+		.r1e5 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			position: absolute;
+			top: 50vh;
+			left: 20vw;
+		}
+
+		.r1e6 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			position: absolute;
+			top: 50vh;
+			left: 25vw;
+		}
+
+		.r1e7 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			position: absolute;
+			top: 50vh;
+			left: 30vw;
+		}
+
+		.r1e8 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			position: absolute;
+			top: 50vh;
+			left: 35vw;
+		}
+
+		.r1e9 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			position: absolute;
+			top: 50vh;
+			left: 40vw;
+		}
+
+		.r1e10 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("left.gif");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 50vh;
+			left: 45vw;
+		}
+
+		.r1e11 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			position: absolute;
+			top: 50vh;
+			left: 50vw;
+		}
+
+		.r1e12 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			position: absolute;
+			top: 50vh;
+			left: 55vw;
+		}
+
+		.r1e13 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			position: absolute;
+			top: 50vh;
+			left: 60vw;
+		}
+
+		.r1e14 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			position: absolute;
+			top: 50vh;
+			left: 65vw;
+		}
+
+		.r1e15 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			position: absolute;
+			top: 50vh;
+			left: 70vw;
+		}
+
+		.r1e16 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			position: absolute;
+			top: 50vh;
+			left: 75vw;
+		}
+
+		.r1e17 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			position: absolute;
+			top: 50vh;
+			left: 80vw;
+		}
+
+		.r1e18 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			position: absolute;
+			top: 50vh;
+			left: 85vw;
+		}
+
+		.r1e19 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			position: absolute;
+			top: 50vh;
+			left: 90vw;
+		}
+
+		.r1e20 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			position: absolute;
+			top: 50vh;
+			left: 95vw;
+		}
+
+		/*row 2*/
+
+		.r2e1 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("gg.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 60vh;
+			left: 0;
+		}
+
+		.r2e2 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("gg.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 60vh;
+			left: 5vw;
+		}
+
+		.r2e3 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("gg.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 60vh;
+			left: 10vw;
+		}
+
+		.r2e4 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("gg.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 60vh;
+			left: 15vw;
+		}
+
+		.r2e5 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("gg.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 60vh;
+			left: 20vw;
+		}
+
+		.r2e6 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("gg.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 60vh;
+			left: 25vw;
+		}
+
+		.r2e7 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("gg.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 60vh;
+			left: 30vw;
+		}
+
+		.r2e8 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("gg.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 60vh;
+			left: 35vw;
+		}
+
+		.r2e9 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("gg.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 60vh;
+			left: 40vw;
+		}
+
+		.r2e10 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("gg.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 60vh;
+			left: 45vw;
+		}
+
+		.r2e11 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("gg.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 60vh;
+			left: 50vw;
+		}
+
+		.r2e12 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("gg.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 60vh;
+			left: 55vw;
+		}
+
+		.r2e13 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("gg.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 60vh;
+			left: 60vw;
+		}
+
+		.r2e14 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("gg.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 60vh;
+			left: 65vw;
+		}
+
+		.r2e15 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("gg.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 60vh;
+			left: 70vw;
+		}
+
+		.r2e16 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("gg.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 60vh;
+			left: 75vw;
+		}
+
+		.r2e17 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("gg.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 60vh;
+			left: 80vw;
+		}
+
+		.r2e18 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("gg.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 60vh;
+			left: 85vw;
+		}
+
+		.r2e19 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("gg.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 60vh;
+			left: 90vw;
+		}
+
+		.r2e20 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("gg.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 60vh;
+			left: 95vw;
+		}
+
+		/*row 3*/
+
+		.r3e1 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 70vh;
+			left: 0;
+		}
+
+		.r3e2 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 70vh;
+			left: 5vw;
+		}
+
+		.r3e3 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 70vh;
+			left: 10vw;
+		}
+
+		.r3e4 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 70vh;
+			left: 15vw;
+		}
+
+		.r3e5 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 70vh;
+			left: 20vw;
+		}
+
+		.r3e6 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 70vh;
+			left: 25vw;
+		}
+
+		.r3e7 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 70vh;
+			left: 30vw;
+		}
+
+		.r3e8 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 70vh;
+			left: 35vw;
+		}
+
+		.r3e9 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 70vh;
+			left: 40vw;
+		}
+
+		.r3e10 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 70vh;
+			left: 45vw;
+		}
+
+		.r3e11 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 70vh;
+			left: 50vw;
+		}
+
+		.r3e12 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 70vh;
+			left: 55vw;
+		}
+
+		.r3e13 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 70vh;
+			left: 60vw;
+		}
+
+		.r3e14 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 70vh;
+			left: 65vw;
+		}
+
+		.r3e15 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 70vh;
+			left: 70vw;
+		}
+
+		.r3e16 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 70vh;
+			left: 75vw;
+		}
+
+		.r3e17 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 70vh;
+			left: 80vw;
+		}
+
+		.r3e18 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 70vh;
+			left: 85vw;
+		}
+
+		.r3e19 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 70vh;
+			left: 90vw;
+		}
+
+		.r3e20 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 70vh;
+			left: 95vw;
+		}
+
+		/*row 4*/
+
+		.r4e1 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 80vh;
+			left: 0;
+		}
+
+		.r4e2 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 80vh;
+			left: 5vw;
+		}
+
+		.r4e3 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 80vh;
+			left: 10vw;
+		}
+
+		.r4e4 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 80vh;
+			left: 15vw;
+		}
+
+		.r4e5 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 80vh;
+			left: 20vw;
+		}
+
+		.r4e6 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 80vh;
+			left: 25vw;
+		}
+
+		.r4e7 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 80vh;
+			left: 30vw;
+		}
+
+		.r4e8 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 80vh;
+			left: 35vw;
+		}
+
+		.r4e9 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 80vh;
+			left: 40vw;
+		}
+
+		.r4e10 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 80vh;
+			left: 45vw;
+		}
+
+		.r4e11 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 80vh;
+			left: 50vw;
+		}
+
+		.r4e12 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 80vh;
+			left: 55vw;
+		}
+
+		.r4e13 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 80vh;
+			left: 60vw;
+		}
+
+		.r4e14 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 80vh;
+			left: 65vw;
+		}
+
+		.r4e15 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 80vh;
+			left: 70vw;
+		}
+
+		.r4e16 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 80vh;
+			left: 75vw;
+		}
+
+		.r4e17 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 80vh;
+			left: 80vw;
+		}
+
+		.r4e18 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 80vh;
+			left: 85vw;
+		}
+
+		.r4e19 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 80vh;
+			left: 90vw;
+		}
+
+		.r4e20 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 80vh;
+			left: 95vw;
+		}
+
+		/*row 5*/
+
+		.r5e1 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 90vh;
+			left: 0;
+		}
+
+		.r5e2 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 90vh;
+			left: 5vw;
+		}
+
+		.r5e3 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 90vh;
+			left: 10vw;
+		}
+
+		.r5e4 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 90vh;
+			left: 15vw;
+		}
+
+		.r5e5 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 90vh;
+			left: 20vw;
+		}
+
+		.r5e6 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 90vh;
+			left: 25vw;
+		}
+
+		.r5e7 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 90vh;
+			left: 30vw;
+		}
+
+		.r5e8 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 90vh;
+			left: 35vw;
+		}
+
+		.r5e9 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 90vh;
+			left: 40vw;
+		}
+
+		.r5e10 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 90vh;
+			left: 45vw;
+		}
+
+		.r5e11 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 90vh;
+			left: 50vw;
+		}
+
+		.r5e12 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 90vh;
+			left: 55vw;
+		}
+
+		.r5e13 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 90vh;
+			left: 60vw;
+		}
+
+		.r5e14 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 90vh;
+			left: 65vw;
+		}
+
+		.r5e15 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 90vh;
+			left: 70vw;
+		}
+
+		.r5e16 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 90vh;
+			left: 75vw;
+		}
+
+		.r5e17 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 90vh;
+			left: 80vw;
+		}
+
+		.r5e18 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 90vh;
+			left: 85vw;
+		}
+
+		.r5e19 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 90vh;
+			left: 90vw;
+		}
+
+		.r5e20 {
+			margin: 0;
+			height: 10vh;
+			width: 5vw;
+			background: url("g.jpg");
+			background-size: 5vw 10vh;
+			position: absolute;
+			top: 90vh;
+			left: 95vw;
+		}
+
+		@media (orientation:portrait) {
+			.left {
+				margin: 0;
+				height: 5vh;
+				width: 10vw;
+				border: 1px solid black;
+				background: url("la.jfif");
+				background-size: 10vw 5vh;
+				position: absolute;
+				top: 20vh;
+				left: 62vw;
+			}
+
+			.right {
+				margin: 0;
+				height: 5vh;
+				width: 10vw;
+				border: 1px solid black;
+				background: url("ra.jfif");
+				background-size: 10vw 5vh;
+				position: absolute;
+				top: 20vh;
+				left: 72vw;
+			}
+
+			.up {
+				margin: 0;
+				height: 5vh;
+				width: 10vw;
+				border: 1px solid black;
+				background: url("ua.jfif");
+				background-size: 10vw 5vh;
+				position: absolute;
+				top: 14.75vh;
+				left: 67vw;
+			}
+
+			.down {
+				margin: 0;
+				height: 5vh;
+				width: 10vw;
+				border: 1px solid black;
+				background: url("da.jfif");
+				background-size: 10vw 5vh;
+				position: absolute;
+				top: 25.15vh;
+				left: 67vw;
+			}
+
+			.sun {
+				display: none;
+			}
+
+			.cloud1 {
+				display: none;
+			}
+
+			.cloud2 {
+				display: none;
+			}
+
+			.cloud3 {
+				display: none;
+			}
+
+			.cloud4 {
+				display: none;
+			}
+
+			.cloud5 {
+				display: none;
+			}
+
+			.r1e1 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				color: rgba(0, 0, 0, 0);
+				position: absolute;
+				top: 50vh;
+				left: 0;
+			}
+
+			.r1e2 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				position: absolute;
+				top: 50vh;
+				left: 10vw;
+			}
+
+			.r1e3 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				position: absolute;
+				top: 50vh;
+				left: 20vw;
+			}
+
+			.r1e4 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				position: absolute;
+				top: 50vh;
+				left: 30vw;
+			}
+
+			.r1e5 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				position: absolute;
+				top: 50vh;
+				left: 40vw;
+			}
+
+			.r1e6 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				position: absolute;
+				top: 50vh;
+				left: 50vw;
+			}
+
+			.r1e7 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				position: absolute;
+				top: 50vh;
+				left: 60vw;
+			}
+
+			.r1e8 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				position: absolute;
+				top: 50vh;
+				left: 70vw;
+			}
+
+			.r1e9 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				position: absolute;
+				top: 50vh;
+				left: 80vw;
+			}
+
+			.r1e10 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("left.gif");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 50vh;
+				left: 90vw;
+			}
+
+			.r1e11 {
+				display: none;
+			}
+
+			.r1e12 {
+				display: none;
+			}
+
+			.r1e13 {
+				display: none;
+			}
+
+			.r1e14 {
+				display: none;
+			}
+
+			.r1e15 {
+				display: none;
+			}
+
+			.r1e16 {
+				display: none;
+			}
+
+			.r1e17 {
+				display: none;
+			}
+
+			.r1e18 {
+				display: none;
+			}
+
+			.r1e19 {
+				display: none;
+			}
+
+			.r1e20 {
+				display: none;
+			}
+
+			.r2e1 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("gg.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 60vh;
+				left: 0;
+			}
+
+			.r2e2 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("gg.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 60vh;
+				left: 10vw;
+			}
+
+			.r2e3 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("gg.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 60vh;
+				left: 20vw;
+			}
+
+			.r2e4 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("gg.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 60vh;
+				left: 30vw;
+			}
+
+			.r2e5 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("gg.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 60vh;
+				left: 40vw;
+			}
+
+			.r2e6 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("gg.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 60vh;
+				left: 50vw;
+			}
+
+			.r2e7 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("gg.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 60vh;
+				left: 60vw;
+			}
+
+			.r2e8 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("gg.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 60vh;
+				left: 70vw;
+			}
+
+			.r2e9 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("gg.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 60vh;
+				left: 80vw;
+			}
+
+			.r2e10 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("gg.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 60vh;
+				left: 90vw;
+			}
+
+			.r2e11 {
+				display: none;
+			}
+
+			.r2e12 {
+				display: none;
+			}
+
+			.r2e13 {
+				display: none;
+			}
+
+			.r2e14 {
+				display: none;
+			}
+
+			.r2e15 {
+				display: none;
+			}
+
+			.r2e16 {
+				display: none;
+			}
+
+			.r2e17 {
+				display: none;
+			}
+
+			.r2e18 {
+				display: none;
+			}
+
+			.r2e19 {
+				display: none;
+			}
+
+			.r2e20 {
+				display: none;
+			}
+
+			.r3e1 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("g.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 70vh;
+				left: 0;
+			}
+
+			.r3e2 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("g.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 70vh;
+				left: 10vw;
+			}
+
+			.r3e3 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("g.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 70vh;
+				left: 20vw;
+			}
+
+			.r3e4 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("g.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 70vh;
+				left: 30vw;
+			}
+
+			.r3e5 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("g.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 70vh;
+				left: 40vw;
+			}
+
+			.r3e6 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("g.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 70vh;
+				left: 50vw;
+			}
+
+			.r3e7 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("g.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 70vh;
+				left: 60vw;
+			}
+
+			.r3e8 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("g.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 70vh;
+				left: 70vw;
+			}
+
+			.r3e9 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("g.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 70vh;
+				left: 80vw;
+			}
+
+			.r3e10 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("g.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 70vh;
+				left: 90vw;
+			}
+
+			.r3e11 {
+				display: none;
+			}
+
+			.r3e12 {
+				display: none;
+			}
+
+			.r3e13 {
+				display: none;
+			}
+
+			.r3e14 {
+				display: none;
+			}
+
+			.r3e15 {
+				display: none;
+			}
+
+			.r3e16 {
+				display: none;
+			}
+
+			.r3e17 {
+				display: none;
+			}
+
+			.r3e18 {
+				display: none;
+			}
+
+			.r3e19 {
+				display: none;
+			}
+
+			.r3e20 {
+				display: none;
+			}
+
+			.r4e1 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("g.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 80vh;
+				left: 0;
+			}
+
+			.r4e2 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("g.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 80vh;
+				left: 10vw;
+			}
+
+			.r4e3 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("g.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 80vh;
+				left: 20vw;
+			}
+
+			.r4e4 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("g.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 80vh;
+				left: 30vw;
+			}
+
+			.r4e5 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("g.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 80vh;
+				left: 40vw;
+			}
+
+			.r4e6 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("g.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 80vh;
+				left: 50vw;
+			}
+
+			.r4e7 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("g.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 80vh;
+				left: 60vw;
+			}
+
+			.r4e8 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("g.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 80vh;
+				left: 70vw;
+			}
+
+			.r4e9 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("g.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 80vh;
+				left: 80vw;
+			}
+
+			.r4e10 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("g.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 80vh;
+				left: 90vw;
+			}
+
+			.r4e11 {
+				display: none;
+			}
+
+			.r4e12 {
+				display: none;
+			}
+
+			.r4e13 {
+				display: none;
+			}
+
+			.r4e14 {
+				display: none;
+			}
+
+			.r4e15 {
+				display: none;
+			}
+
+			.r4e16 {
+				display: none;
+			}
+
+			.r4e17 {
+				display: none;
+			}
+
+			.r4e18 {
+				display: none;
+			}
+
+			.r4e19 {
+				display: none;
+			}
+
+			.r4e20 {
+				display: none;
+			}
+
+			.r5e1 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("g.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 90vh;
+				left: 0;
+			}
+
+			.r5e2 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("g.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 90vh;
+				left: 10vw;
+			}
+
+			.r5e3 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("g.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 90vh;
+				left: 20vw;
+			}
+
+			.r5e4 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("g.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 90vh;
+				left: 30vw;
+			}
+
+			.r5e5 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("g.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 90vh;
+				left: 40vw;
+			}
+
+			.r5e6 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("g.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 90vh;
+				left: 50vw;
+			}
+
+			.r5e7 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("g.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 90vh;
+				left: 60vw;
+			}
+
+			.r5e8 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("g.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 90vh;
+				left: 70vw;
+			}
+
+			.r5e9 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("g.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 90vh;
+				left: 80vw;
+			}
+
+			.r5e10 {
+				margin: 0;
+				height: 10vh;
+				width: 10vw;
+				background: url("g.jpg");
+				background-size: 10vw 10vh;
+				position: absolute;
+				top: 90vh;
+				left: 90vw;
+			}
+
+			.r5e11 {
+				display: none;
+			}
+
+			.r5e12 {
+				display: none;
+			}
+
+			.r5e13 {
+				display: none;
+			}
+
+			.r5e14 {
+				display: none;
+			}
+
+			.r5e15 {
+				display: none;
+			}
+
+			.r5e16 {
+				display: none;
+			}
+
+			.r5e17 {
+				display: none;
+			}
+
+			.r5e18 {
+				display: none;
+			}
+
+			.r5e19 {
+				display: none;
+			}
+
+			.r5e20 {
+				display: none;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="sun"></div>
+	<div class="cloud1"></div>
+	<div class="cloud2"></div>
+	<div class="cloud3"></div>
+	<div class="cloud4"></div>
+	<div class="cloud5"></div>
+	<p>Score: 0</p>
+	<!-- mobile control -->
+	<div class="left"></div>
+	<div class="right"></div>
+	<div class="up"></div>
+	<div class="down"></div>
+	<!-- row 1 -->
+	<div class="r1e1"></div>
+	<div class="r1e2"></div>
+	<div class="r1e3"></div>
+	<div class="r1e4"></div>
+	<div class="r1e5"></div>
+	<div class="r1e6"></div>
+	<div class="r1e7"></div>
+	<div class="r1e8"></div>
+	<div class="r1e9"></div>
+	<div class="r1e10"></div>
+	<div class="r1e11"></div>
+	<div class="r1e12"></div>
+	<div class="r1e13"></div>
+	<div class="r1e14"></div>
+	<div class="r1e15"></div>
+	<div class="r1e16"></div>
+	<div class="r1e17"></div>
+	<div class="r1e18"></div>
+	<div class="r1e19"></div>
+	<div class="r1e20"></div>
+	<!-- row 2 -->
+	<div class="r2e1"></div>
+	<div class="r2e2"></div>
+	<div class="r2e3"></div>
+	<div class="r2e4"></div>
+	<div class="r2e5"></div>
+	<div class="r2e6"></div>
+	<div class="r2e7"></div>
+	<div class="r2e8"></div>
+	<div class="r2e9"></div>
+	<div class="r2e10"></div>
+	<div class="r2e11"></div>
+	<div class="r2e12"></div>
+	<div class="r2e13"></div>
+	<div class="r2e14"></div>
+	<div class="r2e15"></div>
+	<div class="r2e16"></div>
+	<div class="r2e17"></div>
+	<div class="r2e18"></div>
+	<div class="r2e19"></div>
+	<div class="r2e20"></div>
+	<!-- row 3 -->
+	<div class="r3e1"></div>
+	<div class="r3e2"></div>
+	<div class="r3e3"></div>
+	<div class="r3e4"></div>
+	<div class="r3e5"></div>
+	<div class="r3e6"></div>
+	<div class="r3e7"></div>
+	<div class="r3e8"></div>
+	<div class="r3e9"></div>
+	<div class="r3e10"></div>
+	<div class="r3e11"></div>
+	<div class="r3e12"></div>
+	<div class="r3e13"></div>
+	<div class="r3e14"></div>
+	<div class="r3e15"></div>
+	<div class="r3e16"></div>
+	<div class="r3e17"></div>
+	<div class="r3e18"></div>
+	<div class="r3e19"></div>
+	<div class="r3e20"></div>
+	<!-- row 4 -->
+	<div class="r4e1"></div>
+	<div class="r4e2"></div>
+	<div class="r4e3"></div>
+	<div class="r4e4"></div>
+	<div class="r4e5"></div>
+	<div class="r4e6"></div>
+	<div class="r4e7"></div>
+	<div class="r4e8"></div>
+	<div class="r4e9"></div>
+	<div class="r4e10"></div>
+	<div class="r4e11"></div>
+	<div class="r4e12"></div>
+	<div class="r4e13"></div>
+	<div class="r4e14"></div>
+	<div class="r4e15"></div>
+	<div class="r4e16"></div>
+	<div class="r4e17"></div>
+	<div class="r4e18"></div>
+	<div class="r4e19"></div>
+	<div class="r4e20"></div>
+	<!-- row 5 -->
+	<div class="r5e1"></div>
+	<div class="r5e2"></div>
+	<div class="r5e3"></div>
+	<div class="r5e4"></div>
+	<div class="r5e5"></div>
+	<div class="r5e6"></div>
+	<div class="r5e7"></div>
+	<div class="r5e8"></div>
+	<div class="r5e9"></div>
+	<div class="r5e10"></div>
+	<div class="r5e11"></div>
+	<div class="r5e12"></div>
+	<div class="r5e13"></div>
+	<div class="r5e14"></div>
+	<div class="r5e15"></div>
+	<div class="r5e16"></div>
+	<div class="r5e17"></div>
+	<div class="r5e18"></div>
+	<div class="r5e19"></div>
+	<div class="r5e20"></div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script type="text/javascript">
+
+		var query = matchMedia("(orientation:portrait)");
+		if (query.matches) {
+			// adding bomb 
+			var bomb = 7;
+			while (bomb != 0) {
+				var rr = Math.floor(Math.random() * 4) + 2;
+				var re = Math.floor(Math.random() * 10) + 1;
+
+				if ($(".r" + rr + "e" + re).text() == '') {
+					$(".r" + rr + "e" + re).css("color", "rgba(0,0,0,1)");
+					$(".r" + rr + "e" + re).text('b');
+					bomb--;
+				}
+			}
+
+			// adding diamond
+			var diamond = 7;
+			while (diamond != 0) {
+				var rr = Math.floor(Math.random() * 4) + 2;
+				var re = Math.floor(Math.random() * 10) + 1;
+
+				if ($(".r" + rr + "e" + re).text() == '') {
+					$(".r" + rr + "e" + re).css("color", "rgba(0,0,0,1)");
+					$(".r" + rr + "e" + re).text('d');
+					diamond--;
+				}
+			}
+
+
+
+			// miner movement
+			var point = 0;
+			var r = 1;
+			var e = 10;
+			var lock = 0;
+			$(".left").on("click", function () {
+				if (lock == 0) {
+					if (e - 1 > 0) {
+						var t = e - 1;
+						if ($(".r" + r + "e" + t).text() == '') {
+							$(".r" + r + "e" + e).css("background", "skyblue");
+
+							e = e - 1;
+							var p = ".r" + r + "e" + e;
+							$(p).css("background", 'url("left.gif")');
+							$(p).css("background-size", "10vw 10vh");
+						}
+						else {
+							if ($(".r" + r + "e" + t).text() == 'b') {
+								var audio = new Audio("b.mp3");
+								audio.play();
+
+								$(".r" + r + "e" + e).css("background", "skyblue");
+								$(".r" + r + "e" + t).css("background", 'url("blast.gif")');
+								$(".r" + r + "e" + t).css("background-size", "10vw 10vh");
+								lock = 1;
+								setTimeout(function () {
+									$(".r" + r + "e" + t).css("background", 'skyblue');
+								}, 2000);
+							}
+							else {
+								var audio = new Audio("d.wav");
+								audio.play();
+
+								point++;
+								$("p").text("Score:" + point);
+
+								$(".r" + r + "e" + e).css("background", "skyblue");
+								e = e - 1;
+								var p = ".r" + r + "e" + e;
+								$(p).css("background", 'url("diamond.gif")');
+								$(p).css("background-size", "10vw 10vh");
+								$(p).text('');
+								lock = 1;
+								setTimeout(function () {
+									$(p).css("background", 'url("left.gif")');
+									$(p).css("background-size", "10vw 10vh");
+									lock = 0;
+								}, 100);
+							}
+						}
+					}
+				}
+				});
+
+			$(".right").on("click", function () {
+				if (lock == 0) {
+					if (e + 1 < 11) {
+						var t = e + 1;
+						if ($(".r" + r + "e" + t).text() == '') {
+							$(".r" + r + "e" + e).css("background", "skyblue");
+							e = e + 1;
+							var p = ".r" + r + "e" + e;
+							$(p).css("background", 'url("right.gif")');
+							$(p).css("background-size", "10vw 10vh");
+						}
+						else {
+							if ($(".r" + r + "e" + t).text() == 'b') {
+								var audio = new Audio("b.mp3");
+								audio.play();
+
+								$(".r" + r + "e" + e).css("background", "skyblue");
+								$(".r" + r + "e" + t).css("background", 'url("blast.gif")');
+								$(".r" + r + "e" + t).css("background-size", "10vw 10vh");
+								lock = 1;
+								setTimeout(function () {
+									$(".r" + r + "e" + t).css("background", 'skyblue');
+								}, 2000);
+							}
+							else {
+								var audio = new Audio("d.wav");
+								audio.play();
+
+								point++;
+								$("p").text("Score:" + point);
+								$(".r" + r + "e" + e).css("background", "skyblue");
+								e = e + 1;
+								var p = ".r" + r + "e" + e;
+								$(p).css("background", 'url("diamond.gif")');
+								$(p).css("background-size", "10vw 10vh");
+								$(p).text('');
+								lock = 1;
+								setTimeout(function () {
+									$(p).css("background", 'url("right.gif")');
+									$(p).css("background-size", "10vw 10vh");
+									lock = 0;
+								}, 100);
+							}
+						}
+					}
+				}
+			});
+
+			$(".up").on("click", function () {
+				if (lock == 0) {
+					if (r - 1 > 0) {
+						var t = r - 1;
+						if ($(".r" + t + "e" + e).text() == '') {
+							$(".r" + r + "e" + e).css("background", "skyblue");
+							r = r - 1;
+							var p = ".r" + r + "e" + e;
+							$(p).css("background", 'url("left.gif")');
+							$(p).css("background-size", "10vw 10vh");
+						}
+						else {
+							if ($(".r" + t + "e" + e).text() == 'b') {
+								var audio = new Audio("b.mp3");
+								audio.play();
+
+								$(".r" + r + "e" + e).css("background", "skyblue");
+								$(".r" + t + "e" + e).css("background", 'url("blast.gif")');
+								$(".r" + t + "e" + e).css("background-size", "10vw 10vh");
+								lock = 1;
+								setTimeout(function () {
+									$(".r" + t + "e" + e).css("background", 'skyblue');
+								}, 2000);
+							}
+							else {
+								var audio = new Audio("d.wav");
+								audio.play();
+
+								point++;
+								$("p").text("Score:" + point);
+								$(".r" + r + "e" + e).css("background", "skyblue");
+								r = r - 1;
+								var p = ".r" + r + "e" + e;
+								$(p).css("background", 'url("diamond.gif")');
+								$(p).css("background-size", "10vw 10vh");
+								$(p).text('');
+								lock = 1;
+								setTimeout(function () {
+									$(p).css("background", 'url("left.gif")');
+									$(p).css("background-size", "10vw 10vh");
+									lock = 0;
+								}, 100);
+							}
+						}
+					}
+				}
+			});
+
+			$(".down").on("click", function () {
+				if (lock == 0) {
+					if (r + 1 < 6) {
+						var t = r + 1;
+						if ($(".r" + t + "e" + e).text() == '') {
+							$(".r" + r + "e" + e).css("background", "skyblue");
+							r = r + 1;
+							var p = ".r" + r + "e" + e;
+							$(p).css("background", 'url("left.gif")');
+							$(p).css("background-size", "10vw 10vh");
+						}
+						else {
+							if ($(".r" + t + "e" + e).text() == 'b') {
+								var audio = new Audio("b.mp3");
+								audio.play();
+								$(".r" + r + "e" + e).css("background", "skyblue");
+								$(".r" + t + "e" + e).css("background", 'url("blast.gif")');
+								$(".r" + t + "e" + e).css("background-size", "10vw 10vh");
+								lock = 1;
+								setTimeout(function () {
+									$(".r" + t + "e" + e).css("background", 'skyblue');
+								}, 2000);
+							}
+							else {
+								var audio = new Audio("d.wav");
+								audio.play();
+
+								point++;
+								$("p").text("Score:" + point);
+								$(".r" + r + "e" + e).css("background", "skyblue");
+								r = r + 1;
+								var p = ".r" + r + "e" + e;
+								$(p).css("background", 'url("diamond.gif")');
+								$(p).css("background-size", "10vw 10vh");
+								$(p).text('');
+								lock = 1;
+								setTimeout(function () {
+									$(p).css("background", 'url("left.gif")');
+									$(p).css("background-size", "10vw 10vh");
+									lock = 0;
+								}, 100);
+							}
+						}
+					}
+				}
+			});
+		}
+		else {
+			// adding bomb 
+			var bomb = 15;
+			while (bomb != 0) {
+				var rr = Math.floor(Math.random() * 4) + 2;
+				var re = Math.floor(Math.random() * 20) + 1;
+
+				if ($(".r" + rr + "e" + re).text() == '') {
+					$(".r" + rr + "e" + re).css("color", "rgba(0,0,0,0)");
+					$(".r" + rr + "e" + re).text('b');
+					bomb--;
+				}
+			}
+
+			// adding diamond
+			var diamond = 15;
+			while (diamond != 0) {
+				var rr = Math.floor(Math.random() * 4) + 2;
+				var re = Math.floor(Math.random() * 20) + 1;
+
+				if ($(".r" + rr + "e" + re).text() == '') {
+					$(".r" + rr + "e" + re).css("color", "rgba(0,0,0,0)");
+					$(".r" + rr + "e" + re).text('d');
+					diamond--;
+				}
+			}
+
+
+
+			// miner movement
+			var point = 0;
+			var r = 1;
+			var e = 10;
+			var lock = 0;
+			$(document).on("keydown", function (event) {
+				if (lock == 0) {
+
+					if (event.key == "ArrowLeft" && e - 1 > 0) {
+						var t = e - 1;
+						if ($(".r" + r + "e" + t).text() == '') {
+							$(".r" + r + "e" + e).css("background", "skyblue");
+
+							e = e - 1;
+							var p = ".r" + r + "e" + e;
+							$(p).css("background", 'url("left.gif")');
+							$(p).css("background-size", "5vw 10vh");
+						}
+						else {
+							if ($(".r" + r + "e" + t).text() == 'b') {
+								var audio = new Audio("b.mp3");
+								audio.play();
+
+								$(".r" + r + "e" + e).css("background", "skyblue");
+								$(".r" + r + "e" + t).css("background", 'url("blast.gif")');
+								$(".r" + r + "e" + t).css("background-size", "5vw 10vh");
+								lock = 1;
+								setTimeout(function () {
+									$(".r" + r + "e" + t).css("background", 'skyblue');
+								}, 2000);
+							}
+							else {
+								var audio = new Audio("d.wav");
+								audio.play();
+
+								point++;
+								$("p").text("Score:" + point);
+
+								$(".r" + r + "e" + e).css("background", "skyblue");
+								e = e - 1;
+								var p = ".r" + r + "e" + e;
+								$(p).css("background", 'url("diamond.gif")');
+								$(p).css("background-size", "5vw 10vh");
+								$(p).text('');
+								lock = 1;
+								setTimeout(function () {
+									$(p).css("background", 'url("left.gif")');
+									$(p).css("background-size", "5vw 10vh");
+									lock = 0;
+								}, 100);
+							}
+						}
+					}
+					else if (event.key == "ArrowRight" && e + 1 < 21) {
+						var t = e + 1;
+						if ($(".r" + r + "e" + t).text() == '') {
+							$(".r" + r + "e" + e).css("background", "skyblue");
+							e = e + 1;
+							var p = ".r" + r + "e" + e;
+							$(p).css("background", 'url("right.gif")');
+							$(p).css("background-size", "5vw 10vh");
+						}
+						else {
+							if ($(".r" + r + "e" + t).text() == 'b') {
+								var audio = new Audio("b.mp3");
+								audio.play();
+
+								$(".r" + r + "e" + e).css("background", "skyblue");
+								$(".r" + r + "e" + t).css("background", 'url("blast.gif")');
+								$(".r" + r + "e" + t).css("background-size", "5vw 10vh");
+								lock = 1;
+								setTimeout(function () {
+									$(".r" + r + "e" + t).css("background", 'skyblue');
+								}, 2000);
+							}
+							else {
+								var audio = new Audio("d.wav");
+								audio.play();
+
+								point++;
+								$("p").text("Score:" + point);
+								$(".r" + r + "e" + e).css("background", "skyblue");
+								e = e + 1;
+								var p = ".r" + r + "e" + e;
+								$(p).css("background", 'url("diamond.gif")');
+								$(p).css("background-size", "5vw 10vh");
+								$(p).text('');
+								lock = 1;
+								setTimeout(function () {
+									$(p).css("background", 'url("right.gif")');
+									$(p).css("background-size", "5vw 10vh");
+									lock = 0;
+								}, 100);
+							}
+						}
+					}
+					else if (event.key == "ArrowUp" && r - 1 > 0) {
+						var t = r - 1;
+						if ($(".r" + t + "e" + e).text() == '') {
+							$(".r" + r + "e" + e).css("background", "skyblue");
+							r = r - 1;
+							var p = ".r" + r + "e" + e;
+							$(p).css("background", 'url("left.gif")');
+							$(p).css("background-size", "5vw 10vh");
+						}
+						else {
+							if ($(".r" + t + "e" + e).text() == 'b') {
+								var audio = new Audio("b.mp3");
+								audio.play();
+
+								$(".r" + r + "e" + e).css("background", "skyblue");
+								$(".r" + t + "e" + e).css("background", 'url("blast.gif")');
+								$(".r" + t + "e" + e).css("background-size", "5vw 10vh");
+								lock = 1;
+								setTimeout(function () {
+									$(".r" + t + "e" + e).css("background", 'skyblue');
+								}, 2000);
+							}
+							else {
+								var audio = new Audio("d.wav");
+								audio.play();
+
+								point++;
+								$("p").text("Score:" + point);
+								$(".r" + r + "e" + e).css("background", "skyblue");
+								r = r - 1;
+								var p = ".r" + r + "e" + e;
+								$(p).css("background", 'url("diamond.gif")');
+								$(p).css("background-size", "5vw 10vh");
+								$(p).text('');
+								lock = 1;
+								setTimeout(function () {
+									$(p).css("background", 'url("left.gif")');
+									$(p).css("background-size", "5vw 10vh");
+									lock = 0;
+								}, 100);
+							}
+						}
+					}
+					else if (event.key == "ArrowDown" && r + 1 < 6) {
+						var t = r + 1;
+						if ($(".r" + t + "e" + e).text() == '') {
+							$(".r" + r + "e" + e).css("background", "skyblue");
+							r = r + 1;
+							var p = ".r" + r + "e" + e;
+							$(p).css("background", 'url("left.gif")');
+							$(p).css("background-size", "5vw 10vh");
+						}
+						else {
+							if ($(".r" + t + "e" + e).text() == 'b') {
+								var audio = new Audio("b.mp3");
+								audio.play();
+								$(".r" + r + "e" + e).css("background", "skyblue");
+								$(".r" + t + "e" + e).css("background", 'url("blast.gif")');
+								$(".r" + t + "e" + e).css("background-size", "5vw 10vh");
+								lock = 1;
+								setTimeout(function () {
+									$(".r" + t + "e" + e).css("background", 'skyblue');
+								}, 2000);
+							}
+							else {
+								var audio = new Audio("d.wav");
+								audio.play();
+
+								point++;
+								$("p").text("Score:" + point);
+								$(".r" + r + "e" + e).css("background", "skyblue");
+								r = r + 1;
+								var p = ".r" + r + "e" + e;
+								$(p).css("background", 'url("diamond.gif")');
+								$(p).css("background-size", "5vw 10vh");
+								$(p).text('');
+								lock = 1;
+								setTimeout(function () {
+									$(p).css("background", 'url("left.gif")');
+									$(p).css("background-size", "5vw 10vh");
+									lock = 0;
+								}, 100);
+							}
+						}
+					}
+				}
+			});
+		}
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style type="text/css">
+    * {
+      margin: 0px;
+      padding: none;
+      overflow: hidden;
+    }
+
+    body {
+      height: 100vh;
+      width: 100vw;
+      background-color: #070720;
+      position: relative;
+    }
+
+    @keyframes x {
+      0% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    .message {
+      font-size: 2.5rem;
+      color: white;
+      position: absolute;
+      top: 0;
+      left: 33vw;
+
+      animation: x;
+      animation-duration: 0.2s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    .score {
+      font-size: 2rem;
+      color: white;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .d1 {
+      height: 20vh;
+      width: 10vw;
+      background-color: blue;
+      border: 1px solid black;
+      border-radius: 3vh;
+      position: absolute;
+      top: 30vh;
+      left: 40vw;
+    }
+
+    .d2 {
+      height: 20vh;
+      width: 10vw;
+      background-color: red;
+      border: 1px solid black;
+      border-radius: 3vh;
+      position: absolute;
+      top: 30vh;
+      left: 50.5vw;
+    }
+
+    .d3 {
+      height: 20vh;
+      width: 10vw;
+      background-color: green;
+      border: 1px solid black;
+      border-radius: 3vh;
+      position: absolute;
+      top: 51vh;
+      left: 40vw;
+    }
+
+    .d4 {
+      height: 20vh;
+      width: 10vw;
+      background-color: yellow;
+      border: 1px solid black;
+      border-radius: 3vh;
+      position: absolute;
+      top: 51vh;
+      left: 50.5vw;
+    }
+
+    @media (orientation:portrait) {
+      .message {
+        font-size: 2rem;
+        color: white;
+        position: absolute;
+        top: 10vh;
+        left: 30vw;
+
+        animation: x;
+        animation-duration: 0.2s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+
+      .score {
+        font-size: 1rem;
+        color: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .d1 {
+        height: 20vh;
+        width: 30vw;
+        background-color: blue;
+        border: 1px solid black;
+        border-radius: 3vh;
+        position: absolute;
+        top: 30vh;
+        left: 20vw;
+      }
+
+      .d2 {
+        height: 20vh;
+        width: 30vw;
+        background-color: red;
+        border: 1px solid black;
+        border-radius: 3vh;
+        position: absolute;
+        top: 30vh;
+        left: 50.5vw;
+      }
+
+      .d3 {
+        height: 20vh;
+        width: 30vw;
+        background-color: green;
+        border: 1px solid black;
+        border-radius: 3vh;
+        position: absolute;
+        top: 51vh;
+        left: 20vw;
+      }
+
+      .d4 {
+        height: 20vh;
+        width: 30vw;
+        background-color: yellow;
+        border: 1px solid black;
+        border-radius: 3vh;
+        position: absolute;
+        top: 51vh;
+        left: 50.5vw;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <p class="score">Score : 0</p>
+  <p class="message"> Press any key to start game </p>
+  <div class="d1">
+  </div>
+  <div class="d2">
+  </div>
+  <div class="d3">
+  </div>
+  <div class="d4">
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript">
+    var query = matchMedia("(orientation:portrait)");
+    if (query.matches) {
+      $(".message").text("Tap anywhere on screen to start");
+      var rann = [];
+      var usen = [];
+
+      var ak = 1;
+
+      var lvl = 0;
+      var tc = 0;
+      var cc = 0;
+
+      var lock = 0;
+
+      function check() {
+        var x = 0;
+        for (var i = 0; i < rann.length; i++) {
+          if (rann[i] != usen[i]) {
+            x = 1;
+            break;
+          }
+        }
+
+        if (x == 1) {
+          lock = 1;
+          var p = new Audio("wrong.mp3");
+          p.play();
+
+          $("body").css("background-color", "red");
+        }
+        else {
+          $(".score").text("Score : " + lvl)
+          setTimeout(function () {
+            start();
+          }, 1000);
+        }
+      }
+
+      function start() {
+        var r = Math.floor(Math.random() * 4) + 1;
+        $(".d" + r).hide(200).show(200);
+
+        rann.push(r);
+        usen = [];
+        tc++;
+        lvl++;
+        cc = 0;
+      }
+
+      // first keypress
+      $(document).on("touchstart", function () {
+        if (ak == 1) {
+          ak = 0;
+          $(".message").hide();
+          start();
+        }
+      });
+
+      // div eventlistener
+      $(".d1").on("touchstart", function () {
+        if (lock == 0) {
+          $(".d1").hide(200).show(200);
+
+          usen.push(1);
+          cc++;
+
+          var p = new Audio("s1.mp3");
+          p.play();
+
+          if (tc == cc) {
+            check();
+          }
+        }
+      });
+
+      $(".d2").on("touchstart", function () {
+        if (lock == 0) {
+          $(".d2").hide(200).show(200);
+
+          usen.push(2);
+          cc++;
+
+          var p = new Audio("s2.mp3");
+          p.play();
+
+          if (tc == cc) {
+            check();
+          }
+        }
+      });
+
+      $(".d3").on("touchstart", function () {
+        if (lock == 0) {
+          $(".d3").hide(200).show(200);
+
+          usen.push(3);
+          cc++;
+
+          var p = new Audio("s3.mp3");
+          p.play();
+
+          if (tc == cc) {
+            check();
+          }
+        }
+      });
+
+      $(".d4").on("touchstart", function () {
+        if (lock == 0) {
+          $(".d4").hide(200).show(200);
+
+          usen.push(4);
+          cc++;
+
+          var p = new Audio("s4.mp3");
+          p.play();
+
+          if (tc == cc) {
+            check();
+          }
+        }
+      });
+    }
+    else{
+      var rann = [];
+      var usen = [];
+
+      var ak = 1;
+
+      var lvl = 0;
+      var tc = 0;
+      var cc = 0;
+
+      var lock = 0;
+
+      function check() {
+        var x = 0;
+        for (var i = 0; i < rann.length; i++) {
+          if (rann[i] != usen[i]) {
+            x = 1;
+            break;
+          }
+        }
+
+        if (x == 1) {
+          lock = 1;
+          var p = new Audio("wrong.mp3");
+          p.play();
+
+          $("body").css("background-color", "red");
+        }
+        else {
+          $(".score").text("Score : " + lvl)
+          setTimeout(function () {
+            start();
+          }, 1000);
+        }
+      }
+
+      function start() {
+        var r = Math.floor(Math.random() * 4) + 1;
+        $(".d" + r).hide(200).show(200);
+
+        rann.push(r);
+        usen = [];
+        tc++;
+        lvl++;
+        cc = 0;
+      }
+
+      // first keypress
+      $(document).on("keypress", function () {
+        if (ak == 1) {
+          ak = 0;
+          $(".message").hide();
+          start();
+        }
+      });
+
+      // div eventlistener
+      $(".d1").on("click", function () {
+        if (lock == 0) {
+          $(".d1").hide(200).show(200);
+
+          usen.push(1);
+          cc++;
+
+          var p = new Audio("s1.mp3");
+          p.play();
+
+          if (tc == cc) {
+            check();
+          }
+        }
+      });
+
+      $(".d2").on("click", function () {
+        if (lock == 0) {
+          $(".d2").hide(200).show(200);
+
+          usen.push(2);
+          cc++;
+
+          var p = new Audio("s2.mp3");
+          p.play();
+
+          if (tc == cc) {
+            check();
+          }
+        }
+      });
+
+      $(".d3").on("click", function () {
+        if (lock == 0) {
+          $(".d3").hide(200).show(200);
+
+          usen.push(3);
+          cc++;
+
+          var p = new Audio("s3.mp3");
+          p.play();
+
+          if (tc == cc) {
+            check();
+          }
+        }
+      });
+
+      $(".d4").on("click", function () {
+        if (lock == 0) {
+          $(".d4").hide(200).show(200);
+
+          usen.push(4);
+          cc++;
+
+          var p = new Audio("s4.mp3");
+          p.play();
+
+          if (tc == cc) {
+            check();
+          }
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>

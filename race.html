@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Jungle Run</title>
+	<style type="text/css">
+		body {
+			height: 100vh;
+			width: 100vw;
+			margin: 0;
+			overflow-x: hidden;
+			position: relative;
+			background:black;
+			background-size: cover;
+		}
+
+		.dice {
+			height: 15vh;
+			width: 7vw;
+			background: url("side6.jpg");
+			background-size: 7vw 15vh;
+			position: absolute;
+			top: 40vh;
+			left: 83vw;
+			clip-path: polygon(6% 10%, 94% 11%, 94% 89%, 6% 88%)
+		}
+
+		@keyframes x {
+			0% {
+				opacity: 0;
+			}
+
+			100% {
+				opacity: 1;
+			}
+		}
+        p{
+			margin:0;
+		}
+		h6 {
+			margin: 0;
+			font-size: 1.5rem;
+			color: black;
+			margin: 0;
+			text-align: center;
+		}
+
+		.header {
+			height: 15vh;
+			width: 100vw;
+			color: white;
+			font-size: 2rem;
+			font-weight: bold;
+			text-align: center;
+			background-color: rgba(0, 0, 0, 0);
+			animation: x;
+			animation-duration: 0.1s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+		}
+
+		#track1 {
+			height: 12vh;
+			width: 6vw;
+			background: rgba(255, 255, 255, 1);
+			background: url(https://photos.gograph.com/thumbs/CSP/CSP454/k30547499.jpg);
+			background-size: 6vw 12vh;
+			border: .5px solid black;
+			position: absolute;
+			top: 85vh;
+		}
+
+		#track2 {
+			height: 12vh;
+			width: 6vw;
+			background-color: rgba(255, 255, 255, 1);
+			border: .5px solid black;
+			position: absolute;
+			top: 85vh;
+			left: 6vw;
+		}
+
+		#track3 {
+			height: 12vh;
+			width: 6vw;
+			background-color: rgba(255, 255, 255, 1);
+			border: .5px solid black;
+			position: absolute;
+			top: 85vh;
+			left: 12vw;
+		}
+
+		#track4 {
+			height: 12vh;
+			width: 6vw;
+			background-color: rgba(255, 0, 0, 1);
+			border: .5px solid black;
+			position: absolute;
+			top: 85vh;
+			left: 18vw;
+		}
+
+		#track5 {
+			height: 12vh;
+			width: 6vw;
+			background-color: rgba(255, 255, 255, 1);
+			border: .5px solid black;
+			position: absolute;
+			top: 72.75vh;
+			left: 18vw;
+		}
+
+		#track6 {
+			height: 12vh;
+			width: 6vw;
+			background-color: rgba(255, 255, 0, 1);
+			border: .5px solid black;
+			position: absolute;
+			top: 60.75vh;
+			left: 18vw;
+		}
+
+		#track7 {
+			height: 12vh;
+			width: 6vw;
+			background-color: rgba(255, 255, 255, 1);
+			border: .5px solid black;
+			position: absolute;
+			top: 48.75vh;
+			left: 18vw;
+		}
+
+		#track8 {
+			height: 12vh;
+			width: 6vw;
+			background-color: rgba(255, 255, 255, 1);
+			border: .5px solid black;
+			position: absolute;
+			top: 36.75vh;
+			left: 18vw;
+		}
+
+		#track9 {
+			height: 12vh;
+			width: 6vw;
+			background-color: rgba(255, 255, 255, 1);
+			border: .5px solid black;
+			position: absolute;
+			top: 24.75vh;
+			left: 18vw;
+		}
+
+		#track10 {
+			height: 12vh;
+			width: 6vw;
+			background-color: rgba(255, 255, 255, 1);
+			border: .5px solid black;
+			position: absolute;
+			top: 24.75vh;
+			left: 24vw;
+		}
+
+		#track11 {
+			height: 12vh;
+			width: 6vw;
+			background-color: rgba(255, 255, 255, 1);
+			border: .5px solid black;
+			position: absolute;
+			top: 24.75vh;
+			left: 30vw;
+		}
+
+		#track12 {
+			height: 12vh;
+			width: 6vw;
+			background-color: rgba(255, 255, 0, 1);
+			border: .5px solid black;
+			position: absolute;
+			top: 24.75vh;
+			left: 36vw;
+		}
+
+		#track13 {
+			height: 12vh;
+			width: 6vw;
+			background-color: rgba(255, 255, 255, 1);
+			border: .5px solid black;
+			position: absolute;
+			top: 36.75vh;
+			left: 36vw;
+		}
+
+		#track14 {
+			height: 12vh;
+			width: 6vw;
+			background-color: rgba(255, 255, 255, 1);
+			border: .5px solid black;
+			position: absolute;
+			top: 48.75vh;
+			left: 36vw;
+		}
+
+		#track15 {
+			height: 12vh;
+			width: 6vw;
+			background-color: rgba(255, 255, 255, 1);
+			border: .5px solid black;
+			position: absolute;
+			top: 60.75vh;
+			left: 36vw;
+		}
+
+		#track16 {
+			height: 12vh;
+			width: 6vw;
+			background-color: rgba(255, 255, 255, 1);
+			border: .5px solid black;
+			position: absolute;
+			top: 72.75vh;
+			left: 36vw;
+		}
+
+		#track17 {
+			height: 12vh;
+			width: 6vw;
+			background-color: rgba(255, 255, 255, 1);
+			border: .5px solid black;
+			position: absolute;
+			top: 85vh;
+			left: 36vw;
+		}
+
+		#track18 {
+			height: 12vh;
+			width: 6vw;
+			background-color: rgba(255, 255, 0, 1);
+			border: .5px solid black;
+			position: absolute;
+			top: 85vh;
+			left: 42vw;
+		}
+
+		#track19 {
+			height: 12vh;
+			width: 6vw;
+			background-color: rgba(255, 255, 255, 1);
+			border: .5px solid black;
+			position: absolute;
+			top: 85vh;
+			left: 48vw;
+		}
+
+		#track20 {
+			height: 12vh;
+			width: 6vw;
+			background-color: rgba(255, 255, 255, 1);
+			border: .5px solid black;
+			position: absolute;
+			top: 72.75vh;
+			left: 48vw;
+		}
+
+		#track21 {
+			height: 12vh;
+			width: 6vw;
+			background-color: rgba(255, 0, 0, 1);
+			border: .5px solid black;
+			position: absolute;
+			top: 60.75vh;
+			left: 48vw;
+		}
+
+		#track22 {
+			height: 12vh;
+			width: 6vw;
+			background-color: rgba(255, 255, 255, 1);
+			border: .5px solid black;
+			position: absolute;
+			top: 48.75vh;
+			left: 48vw;
+		}
+
+		#track23 {
+			height: 12vh;
+			width: 6vw;
+			background-color: rgba(255, 255, 255, 1);
+			border: .5px solid black;
+			position: absolute;
+			top: 36.75vh;
+			left: 48vw;
+		}
+
+		#track24 {
+			height: 12vh;
+			width: 6vw;
+			background-color: rgba(255, 255, 0, 1);
+			border: .5px solid black;
+			position: absolute;
+			top: 36.75vh;
+			left: 54vw;
+		}
+
+		#track25 {
+			height: 12vh;
+			width: 6vw;
+			background-color: rgba(255, 255, 255, 1);
+			border: .5px solid black;
+			position: absolute;
+			top: 36.75vh;
+			left: 60vw;
+		}
+
+		#track26 {
+			height: 12vh;
+			width: 6vw;
+			background-color: rgba(255, 255, 255, 1);
+			border: .5px solid black;
+			position: absolute;
+			top: 36.75vh;
+			left: 66vw;
+		}
+
+		#track27 {
+			height: 12vh;
+			width: 6vw;
+			background-color: rgba(255, 255, 255, 1);
+			border: .5px solid black;
+			position: absolute;
+			top: 48.75vh;
+			left: 66vw;
+		}
+
+		#track28 {
+			height: 12vh;
+			width: 6vw;
+			background-color: rgba(255, 255, 255, 1);
+			border: .5px solid black;
+			position: absolute;
+			top: 60.75vh;
+			left: 66vw;
+		}
+
+		#track29 {
+			height: 12vh;
+			width: 6vw;
+			background-color: rgba(255, 0, 0, 1);
+			border: .5px solid black;
+			position: absolute;
+			top: 72.75vh;
+			left: 66vw;
+		}
+
+		#track30 {
+			height: 12vh;
+			width: 6vw;
+			background: url(https://tse2.mm.bing.net/th?id=OIP.MYfT8HuVUo_3TPUIGlb94wHaGQ&pid=Api&P=0&w=200&h=170);
+			background-size: 6vw 12vh;
+			border: .5px solid black;
+			position: absolute;
+			top: 85vh;
+			left: 66vw;
+		}
+
+		@media (orientation:portrait) {
+			.dice {
+				height: 13vh;
+				width: 15vw;
+				background: url("side6.jpg");
+				background-size: 15vw 13vh;
+				position: absolute;
+				top: 10vh;
+				left: 5vw;
+				clip-path: polygon(6% 10%, 94% 11%, 94% 89%, 6% 88%)
+			}
+
+			#track1 {
+				height: 8vh;
+				width: 10vw;
+				background: url(https://photos.gograph.com/thumbs/CSP/CSP454/k30547499.jpg);
+				background-size: 10vw 8vh;
+				border: .5px solid black;
+				position: absolute;
+				top: 55vh;
+			}
+
+			#track2 {
+				height: 8vh;
+				width: 10vw;
+				background: white;
+				border: .5px solid black;
+				position: absolute;
+				top: 55vh;
+				left: 10vw;
+			}
+
+			#track3 {
+				height: 8vh;
+				width: 10vw;
+				background: white;
+				border: .5px solid black;
+				position: absolute;
+				top: 55vh;
+				left: 20vw;
+			}
+
+			#track4 {
+				height: 8vh;
+				width: 10vw;
+				background: red;
+				border: .5px solid black;
+				position: absolute;
+				top: 55vh;
+				left: 30vw;
+			}
+
+			#track5 {
+				height: 8vh;
+				width: 10vw;
+				background: white;
+				border: .5px solid black;
+				position: absolute;
+				top: 47vh;
+				left: 30vw;
+			}
+
+			#track6 {
+				height: 8vh;
+				width: 10vw;
+				background: yellow;
+				border: .5px solid black;
+				position: absolute;
+				top: 39vh;
+				left: 30vw;
+			}
+
+			#track7 {
+				height: 8vh;
+				width: 10vw;
+				background: white;
+				border: .5px solid black;
+				position: absolute;
+				top: 31vh;
+				left: 30vw;
+			}
+
+			#track8 {
+				height: 8vh;
+				width: 10vw;
+				background: white;
+				border: .5px solid black;
+				position: absolute;
+				top: 23vh;
+				left: 30vw;
+			}
+
+			#track9 {
+				height: 8vh;
+				width: 10vw;
+				background: white;
+				border: .5px solid black;
+				position: absolute;
+				top: 23vh;
+				left: 40vw;
+			}
+
+			#track10 {
+				height: 8vh;
+				width: 10vw;
+				background: white;
+				border: .5px solid black;
+				position: absolute;
+				top: 23vh;
+				left: 50vw;
+			}
+
+			#track11 {
+				height: 8vh;
+				width: 10vw;
+				background: white;
+				border: .5px solid black;
+				position: absolute;
+				top: 23vh;
+				left: 60vw;
+			}
+
+			#track12 {
+				height: 8vh;
+				width: 10vw;
+				background: yellow;
+				border: .5px solid black;
+				position: absolute;
+				top: 23vh;
+				left: 70vw;
+			}
+
+			#track13 {
+				height: 8vh;
+				width: 10vw;
+				background: white;
+				border: .5px solid black;
+				position: absolute;
+				top: 23vh;
+				left: 80vw;
+			}
+
+			#track14 {
+				height: 8vh;
+				width: 10vw;
+				background: white;
+				border: .5px solid black;
+				position: absolute;
+				top: 23vh;
+				left: 90vw;
+			}
+
+			#track15 {
+				height: 8vh;
+				width: 10vw;
+				background: white;
+				border: .5px solid black;
+				position: absolute;
+				top: 31vh;
+				left: 90vw;
+			}
+
+			#track16 {
+				height: 8vh;
+				width: 10vw;
+				background: white;
+				border: .5px solid black;
+				position: absolute;
+				top: 39vh;
+				left: 90vw;
+			}
+
+			#track17 {
+				height: 8vh;
+				width: 10vw;
+				background: white;
+				border: .5px solid black;
+				position: absolute;
+				top: 47vh;
+				left: 90vw;
+			}
+
+			#track18 {
+				height: 8vh;
+				width: 10vw;
+				background: yellow;
+				border: .5px solid black;
+				position: absolute;
+				top: 55vh;
+				left: 90vw;
+			}
+
+			#track19 {
+				height: 8vh;
+				width: 10vw;
+				background: white;
+				border: .5px solid black;
+				position: absolute;
+				top: 63vh;
+				left: 90vw;
+			}
+
+			#track20 {
+				height: 8vh;
+				width: 10vw;
+				background: white;
+				border: .5px solid black;
+				position: absolute;
+				top: 71vh;
+				left: 90vw;
+			}
+
+			#track21 {
+				height: 8vh;
+				width: 10vw;
+				background: red;
+				border: .5px solid black;
+				position: absolute;
+				top: 79vh;
+				left: 90vw;
+			}
+
+			#track22 {
+				height: 8vh;
+				width: 10vw;
+				background: white;
+				border: .5px solid black;
+				position: absolute;
+				top: 87vh;
+				left: 90vw;
+			}
+
+			#track23 {
+				height: 8vh;
+				width: 10vw;
+				background: white;
+				border: .5px solid black;
+				position: absolute;
+				top: 87vh;
+				left: 80vw;
+			}
+
+			#track24 {
+				height: 8vh;
+				width: 10vw;
+				background: yellow;
+				border: .5px solid black;
+				position: absolute;
+				top: 87vh;
+				left: 70vw;
+			}
+
+			#track25 {
+				height: 8vh;
+				width: 10vw;
+				background: white;
+				border: .5px solid black;
+				position: absolute;
+				top: 87vh;
+				left: 60vw;
+			}
+
+			#track26 {
+				height: 8vh;
+				width: 10vw;
+				background: white;
+				border: .5px solid black;
+				position: absolute;
+				top: 87vh;
+				left: 50vw;
+			}
+
+			#track27 {
+				height: 8vh;
+				width: 10vw;
+				background: white;
+				border: .5px solid black;
+				position: absolute;
+				top: 87vh;
+				left: 40vw;
+			}
+
+			#track28 {
+				height: 8vh;
+				width: 10vw;
+				background: white;
+				border: .5px solid black;
+				position: absolute;
+				top: 87vh;
+				left: 30vw;
+			}
+
+			#track29 {
+				height: 8vh;
+				width: 10vw;
+				background: red;
+				border: .5px solid black;
+				position: absolute;
+				top: 87vh;
+				left: 20vw;
+			}
+
+			#track30 {
+				height: 8vh;
+				width: 10vw;
+				background: url(https://tse2.mm.bing.net/th?id=OIP.MYfT8HuVUo_3TPUIGlb94wHaGQ&pid=Api&P=0&w=200&h=170);
+				background-size: 10vw 8vh;
+				border: .5px solid black;
+				position: absolute;
+				top: 87vh;
+				left: 10vw;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="header">The Number Race</div>
+	<div class="dice">
+	</div>
+	<div id="track1">
+		<h6 id="player1">1</h6>
+		<h6 id="player2">2</h6>
+	</div>
+	<div id="track2">
+		<h6 id="player1">1</h6>
+		<h6 id="player2">2</h6>
+	</div>
+	<div id="track3">
+		<h6 id="player1">1</h6>
+		<h6 id="player2">2</h6>
+	</div>
+	<div id="track4">
+		<h6 id="player1">1</h6>
+		<h6 id="player2">2</h6>
+	</div>
+	<div id="track5">
+		<h6 id="player1">1</h6>
+		<h6 id="player2">2</h6>
+	</div>
+	<div id="track6">
+		<h6 id="player1">1</h6>
+		<h6 id="player2">2</h6>
+	</div>
+	<div id="track7">
+		<h6 id="player1">1</h6>
+		<h6 id="player2">2</h6>
+	</div>
+	<div id="track8">
+		<h6 id="player1">1</h6>
+		<h6 id="player2">2</h6>
+	</div>
+	<div id="track9">
+		<h6 id="player1">1</h6>
+		<h6 id="player2">2</h6>
+	</div>
+	<div id="track10">
+		<h6 id="player1">1</h6>
+		<h6 id="player2">2</h6>
+	</div>
+	<div id="track11">
+		<h6 id="player1">1</h6>
+		<h6 id="player2">2</h6>
+	</div>
+	<div id="track12">
+		<h6 id="player1">1</h6>
+		<h6 id="player2">2</h6>
+	</div>
+	<div id="track13">
+		<h6 id="player1">1</h6>
+		<h6 id="player2">2</h6>
+	</div>
+	<div id="track14">
+		<h6 id="player1">1</h6>
+		<h6 id="player2">2</h6>
+	</div>
+	<div id="track15">
+		<h6 id="player1">1</h6>
+		<h6 id="player2">2</h6>
+	</div>
+	<div id="track16">
+		<h6 id="player1">1</h6>
+		<h6 id="player2">2</h6>
+	</div>
+	<div id="track17">
+		<h6 id="player1">1</h6>
+		<h6 id="player2">2</h6>
+	</div>
+	<div id="track18">
+		<h6 id="player1">1</h6>
+		<h6 id="player2">2</h6>
+	</div>
+	<div id="track19">
+		<h6 id="player1">1</h6>
+		<h6 id="player2">2</h6>
+	</div>
+	<div id="track20">
+		<h6 id="player1">1</h6>
+		<h6 id="player2">2</h6>
+	</div>
+	<div id="track21">
+		<h6 id="player1">1</h6>
+		<h6 id="player2">2</h6>
+	</div>
+	<div id="track22">
+		<h6 id="player1">1</h6>
+		<h6 id="player2">2</h6>
+	</div>
+	<div id="track23">
+		<h6 id="player1">1</h6>
+		<h6 id="player2">2</h6>
+	</div>
+	<div id="track24">
+		<h6 id="player1">1</h6>
+		<h6 id="player2">2</h6>
+	</div>
+	<div id="track25">
+		<h6 id="player1">1</h6>
+		<h6 id="player2">2</h6>
+	</div>
+	<div id="track26">
+		<h6 id="player1">1</h6>
+		<h6 id="player2">2</h6>
+	</div>
+	<div id="track27">
+		<h6 id="player1">1</h6>
+		<h6 id="player2">2</h6>
+	</div>
+	<div id="track28">
+		<h6 id="player1">1</h6>
+		<h6 id="player2">2</h6>
+	</div>
+	<div id="track29">
+		<h6 id="player1">1</h6>
+		<h6 id="player2">2</h6>
+	</div>
+	<div id="track30">
+		<h6 id="player1">1</h6>
+		<h6 id="player2">2</h6>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		var query = matchMedia("(orientation:portrait)");
+		if (query.matches) {
+			var lastpos1 = 1;
+			var lastpos2 = 1;
+			var c = 0;
+			var check = 0;
+
+			for (var i = 2; i <= 30; i++) {
+				$("#track" + i + " #player1").hide();
+				$("#track" + i + " #player2").hide();
+			}
+
+
+			$(".dice").on("touchstart", function () {
+				if (check == 0) {
+					$(".header").css("animation-iteration-count", 0);
+
+					var s = new Audio("diceroll.mp3");
+					s.play();
+
+					var a = Math.floor(Math.random() * 6) + 1;
+					var i = "url('side" + a + ".jpg')";
+					$(".dice").css("background", i);
+					$(".dice").css("background-size", "15vw 13vh");
+					if (c == 0) {
+						var temp = lastpos1 + a;
+						if (temp >= 30) {
+							temp = 30;
+						}
+						if (temp == 4 || temp == 21 || temp == 29) {
+							setTimeout(function () {
+								alert("player1 steped on red tile , he will have to restart");
+							}, 500);
+							temp = 1;
+
+							var p = new Audio("coloredtile.mp3");
+							p.play();
+
+						}
+						else if (temp % 6 == 0 && temp != 30) {
+							setTimeout(function () {
+								alert("player 1 stepped on yellow tile, his 1 step will be deducted");
+							}, 500);
+							temp = temp - 1;
+
+							var p = new Audio("coloredtile.mp3");
+							p.play();
+
+						}
+
+						$("#track" + lastpos1 + " #player1").hide();
+						$("#track" + temp + " #player1").show();
+
+						if (temp == 30) {
+							$(".header").html("<p>Player 1 Wins</p>");
+							var p = new Audio("win.mp3");
+							p.play();
+							check = 1;
+						}
+
+						lastpos1 = temp;
+						c = 1;
+					}
+					else {
+						var temp = lastpos2 + a;
+
+						if (temp >= 30) {
+							temp = 30;
+						}
+
+						if (temp == 4 || temp == 21 || temp == 29) {
+							setTimeout(function () {
+								alert("player2 steped on red tile , he will have to restart");
+							}, 500);
+							temp = 1;
+							var p = new Audio("coloredtile.mp3");
+							p.play();
+
+						}
+						else if (temp % 6 == 0 && temp != 30) {
+							setTimeout(function () {
+								alert("player 2 stepped on yellow tile, his 1 step will be deducted");
+							}, 500);
+							temp = temp - 1;
+							var p = new Audio("coloredtile.mp3");
+							p.play();
+
+						}
+
+						$("#track" + lastpos2 + " #player2").hide();
+						$("#track" + temp + " #player2").show();
+
+						if (temp == 30) {
+							$(".header").html("<p>Player 2 Wins</p>");
+							var p = new Audio("win.mp3");
+							p.play();
+							check = 1;
+						}
+
+						lastpos2 = temp;
+						c = 0;
+					}
+				}
+			});
+		}
+		else
+		{
+			var lastpos1 = 1;
+			var lastpos2 = 1;
+			var c = 0;
+			var check = 0;
+
+			for (var i = 2; i <= 30; i++) {
+				$("#track" + i + " #player1").hide();
+				$("#track" + i + " #player2").hide();
+			}
+
+
+			$(".dice").on("click", function () {
+				if (check == 0) {
+					$(".header").css("animation-iteration-count", 0);
+
+					var s = new Audio("diceroll.mp3");
+					s.play();
+
+					var a = Math.floor(Math.random() * 6) + 1;
+					var i = "url('side" + a + ".jpg')";
+					$(".dice").css("background", i);
+					$(".dice").css("background-size", "7vw 15vh");
+					if (c == 0) {
+						var temp = lastpos1 + a;
+						if (temp >= 30) {
+							temp = 30;
+						}
+						if (temp == 4 || temp == 21 || temp == 29) {
+							setTimeout(function () {
+								alert("player1 steped on red tile , he will have to restart");
+							}, 500);
+							temp = 1;
+
+							var p = new Audio("coloredtile.mp3");
+							p.play();
+
+						}
+						else if (temp % 6 == 0 && temp != 30) {
+							setTimeout(function () {
+								alert("player 1 stepped on yellow tile, his 1 step will be deducted");
+							}, 500);
+							temp = temp - 1;
+
+							var p = new Audio("coloredtile.mp3");
+							p.play();
+
+						}
+
+						$("#track" + lastpos1 + " #player1").hide();
+						$("#track" + temp + " #player1").show();
+
+						if (temp == 30) {
+							$(".header").html("<p>Player 1 Wins</p>");
+							var p = new Audio("win.mp3");
+							p.play();
+							check = 1;
+						}
+
+						lastpos1 = temp;
+						c = 1;
+					}
+					else {
+						var temp = lastpos2 + a;
+
+						if (temp >= 30) {
+							temp = 30;
+						}
+
+						if (temp == 4 || temp == 21 || temp == 29) {
+							setTimeout(function () {
+								alert("player2 steped on red tile , he will have to restart");
+							}, 500);
+							temp = 1;
+							var p = new Audio("coloredtile.mp3");
+							p.play();
+
+						}
+						else if (temp % 6 == 0 && temp != 30) {
+							setTimeout(function () {
+								alert("player 2 stepped on yellow tile, his 1 step will be deducted");
+							}, 500);
+							temp = temp - 1;
+							var p = new Audio("coloredtile.mp3");
+							p.play();
+
+						}
+
+						$("#track" + lastpos2 + " #player2").hide();
+						$("#track" + temp + " #player2").show();
+
+						if (temp == 30) {
+							$(".header").html("<p>Player 2 Wins</p>");
+							var p = new Audio("win.mp3");
+							p.play();
+							check = 1;
+						}
+
+						lastpos2 = temp;
+						c = 0;
+					}
+				}
+			});
+		}
+	</script>
+</body>
+
+</html>
